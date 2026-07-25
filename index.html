@@ -71,15 +71,18 @@
   li:focus-within .chev{ transform:rotate(180deg); }
 
   .mega{
-    position:absolute; left:16px; right:16px; top:100%; margin-top:6px;
-    background:var(--surface); border:1px solid var(--surface-line); border-radius:12px;
-    box-shadow:0 20px 40px -12px rgba(0,0,0,.25);
-    padding:18px; display:grid; grid-template-columns:120px 1fr; gap:20px;
+    position:absolute; left:16px; right:16px; top:100%;
+    padding-top:6px; /* invisible bridge: keeps the hover hitbox continuous from button to card */
     opacity:0; transform:translateY(-6px); pointer-events:none;
     transition:opacity .15s ease, transform .15s ease;
     z-index:5;
   }
   li:hover .mega, li:focus-within .mega{ opacity:1; transform:translateY(0); pointer-events:auto; }
+  .mega-card{
+    background:var(--surface); border:1px solid var(--surface-line); border-radius:12px;
+    box-shadow:0 20px 40px -12px rgba(0,0,0,.25);
+    padding:18px; display:grid; grid-template-columns:120px 1fr; gap:20px;
+  }
   .mega-links{ display:flex; flex-direction:column; gap:10px; }
   .mega-links a{ font-size:13px; color:var(--surface-ink); text-decoration:none; }
   .mega-links a:hover{ color:var(--accent-dim); }
@@ -144,15 +147,17 @@
     <li>
       <button class="demo-btn" type="button">Skincare <span class="chev">▾</span></button>
       <div class="mega">
-        <div class="mega-links">
-          <a href="#" tabindex="-1">Face</a>
-          <a href="#" tabindex="-1">Body</a>
-          <a href="#" tabindex="-1">Hair</a>
-        </div>
-        <div class="mega-products">
-          <div class="prod"><div class="swatch" style="background:#bfe9df"></div><p>Fulfilled</p><span>$62.99</span></div>
-          <div class="prod"><div class="swatch" style="background:#c9c2ea"></div><p>Archived</p><span>$62.99</span></div>
-          <div class="prod"><div class="swatch" style="background:#dcdce0"></div><p>Hydrogen</p><span>$60.00</span></div>
+        <div class="mega-card">
+          <div class="mega-links">
+            <a href="#" tabindex="-1">Face</a>
+            <a href="#" tabindex="-1">Body</a>
+            <a href="#" tabindex="-1">Hair</a>
+          </div>
+          <div class="mega-products">
+            <div class="prod"><div class="swatch" style="background:#bfe9df"></div><p>Fulfilled</p><span>$62.99</span></div>
+            <div class="prod"><div class="swatch" style="background:#c9c2ea"></div><p>Archived</p><span>$62.99</span></div>
+            <div class="prod"><div class="swatch" style="background:#dcdce0"></div><p>Hydrogen</p><span>$60.00</span></div>
+          </div>
         </div>
       </div>
     </li>
@@ -180,6 +185,7 @@
     <div class="links">
       <a href="mailto:m.vawda.pro@gmail.com">m.vawda.pro@gmail.com</a>
       <a href="/privacy/">Privacy policy</a>
+      <a href="/terms/">Terms of Service</a>
     </div>
   </div>
 </footer>
