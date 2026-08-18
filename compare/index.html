@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Uno Mega Menu: live data or a copy, what your menu shows shoppers</title>
+<meta name="description" content="Menu apps either copy your product data once or read it live on every page view. Here is what that difference means for prices, stock and promotions.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg-top:#111216; --bg-bottom:#090a0d;
+    --accent:#3884ff; --accent-dim:#2a63c2;
+    --ink:#f5f6f8; --ink-dim:#969ba5; --ink-faint:#5b606b;
+    --surface:#ffffff; --surface-ink:#1a1a1a; --surface-line:#e7e7e9;
+    --radius:14px;
+  }
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0; min-height:100vh;
+    font-family:'Inter',-apple-system,Segoe UI,sans-serif;
+    color:var(--ink);
+    background:linear-gradient(180deg,var(--bg-top) 0%,var(--bg-bottom) 100%);
+  }
+  a{ color:inherit; }
+  .wrap{ max-width:1040px; margin:0 auto; padding:0 24px; }
+
+  header.site{ padding:28px 0; }
+  header.site .wrap{ display:flex; align-items:center; justify-content:space-between; }
+  .brand{ display:flex; align-items:center; gap:10px; font-family:'Poppins',sans-serif; font-weight:700; font-size:17px; letter-spacing:-.01em; text-decoration:none; }
+  .brand .mark{ width:22px; height:22px; border-radius:6px; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:13px; color:#fff; font-weight:700; }
+  nav.site a{ text-decoration:none; color:var(--ink-dim); font-size:14px; font-weight:500; margin-left:20px; }
+  nav.site a:hover, nav.site a:focus-visible{ color:var(--ink); }
+
+  .hero{ padding:56px 0 20px; text-align:center; }
+  .hero h1{
+    font-family:'Poppins',sans-serif; font-weight:700; font-size:40px; line-height:1.15;
+    letter-spacing:-.02em; margin:0 0 18px; max-width:720px; margin-inline:auto;
+  }
+  .hero h1 .accent{ color:var(--accent); }
+  .hero p{ color:var(--ink-dim); font-size:17px; line-height:1.6; max-width:600px; margin:0 auto; }
+
+  .explain{ padding:40px 0 8px; max-width:640px; margin:0 auto; }
+  .explain h2{ font-family:'Poppins',sans-serif; font-size:20px; margin:32px 0 10px; letter-spacing:-.01em; }
+  .explain p{ color:var(--ink-dim); font-size:15.5px; line-height:1.7; margin:0 0 14px; }
+  .explain strong{ color:var(--ink); font-weight:600; }
+
+  .compare{ padding:40px 0 24px; }
+  .compare h2{
+    font-family:'Poppins',sans-serif; font-size:13px; text-transform:uppercase; letter-spacing:.08em;
+    color:var(--ink-faint); text-align:center; margin:0 0 28px; font-weight:600;
+  }
+  .table{
+    border-radius:16px; overflow:hidden; background:rgba(255,255,255,.08);
+    display:grid; grid-template-columns:1.2fr 1fr 1fr; gap:1px;
+    font-size:14px; line-height:1.5;
+  }
+  .table > div{ background:var(--bg-top); padding:16px 18px; }
+  .table .head{ font-family:'Poppins',sans-serif; font-weight:600; font-size:13px; color:var(--ink); }
+  .table .head.uno{ color:var(--accent); }
+  .table .feat{ color:var(--ink); font-weight:500; }
+  .table .copy{ color:var(--ink-dim); }
+  .table .uno-cell{ color:var(--ink); }
+  .table .uno-cell::before{ content:"✓ "; color:var(--accent); font-weight:700; }
+  @media (max-width: 720px){
+    .table{ grid-template-columns:1fr; font-size:13.5px; }
+    .table .feat{ background:#181a20; font-family:'Poppins',sans-serif; }
+    .table .head{ display:none; }
+    .table .copy::before{ content:"Copied snapshot: "; color:var(--ink-faint); font-weight:600; }
+    .table .uno-cell::before{ content:"✓ Uno: "; }
+  }
+
+  .note{ max-width:640px; margin:28px auto 0; color:var(--ink-faint); font-size:13px; line-height:1.6; text-align:center; }
+
+  .cta{ text-align:center; padding:48px 0 72px; }
+  .cta a{
+    display:inline-block; background:var(--accent); color:#fff; text-decoration:none;
+    font-weight:600; font-size:15px; padding:13px 26px; border-radius:10px;
+  }
+  .cta a:hover{ background:var(--accent-dim); }
+  .cta p{ color:var(--ink-faint); font-size:13px; margin:12px 0 0; }
+
+  footer{ border-top:1px solid rgba(255,255,255,.08); padding:26px 0 40px; }
+  footer .wrap{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; }
+  footer p{ margin:0; font-size:13px; color:var(--ink-faint); }
+  footer .links{ display:flex; gap:18px; }
+  footer .links a{ font-size:13px; color:var(--ink-dim); text-decoration:none; }
+  footer .links a:hover{ color:var(--ink); }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ transition:none !important; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="/"><span class="mark">U</span>Uno Mega Menu</a>
+    <nav class="site"><a href="/tutorial/">Getting started</a><a href="/privacy/">Privacy</a></nav>
+  </div>
+</header>
+
+<section class="hero wrap">
+  <h1>Your menu shows prices.<br>Are they <span class="accent">still true</span>?</h1>
+  <p>Menu apps put products in front of shoppers in one of two ways. They copy your product data once, or they read it live on every page view. That single design choice decides whether your menu can lie.</p>
+</section>
+
+<section class="explain wrap">
+  <h2>The snapshot approach</h2>
+  <p>Most menu builders store a copy of each product you pick: its name, its image, its price. The copy is taken the day you build the menu. From that day on, your store moves and the copy does not. Lower a price, launch a sale or sell out a size and the menu keeps showing the world as it was.</p>
+  <p>This is not a bug in those apps. It is the design. A copied number has no way to update itself.</p>
+
+  <h2>The live approach</h2>
+  <p>Uno renders your menu on Shopify's servers, inside your storefront, at the moment each page loads. Product cards read the <strong>current</strong> price, the <strong>current</strong> stock and the <strong>current</strong> promotion straight from your store. There is no copy to go stale, so there is nothing to resync and nothing to remember.</p>
+</section>
+
+<section class="compare wrap">
+  <h2>What that means, line by line</h2>
+  <div class="table">
+    <div class="head">In the menu</div>
+    <div class="head">Copied snapshot</div>
+    <div class="head uno">Uno, read live</div>
+
+    <div class="feat">Price after you change it</div>
+    <div class="copy">Keeps showing the old price</div>
+    <div class="uno-cell">Updates on the next page view</div>
+
+    <div class="feat">Product on sale</div>
+    <div class="copy">No way to know</div>
+    <div class="uno-cell">Old price struck through next to the sale price</div>
+
+    <div class="feat">Product sold out</div>
+    <div class="copy">Still shows an add button</div>
+    <div class="uno-cell">Marked sold out, button disabled</div>
+
+    <div class="feat">Product with several variants</div>
+    <div class="copy">Adds one variant picked for the shopper</div>
+    <div class="uno-cell">Sends the shopper to choose options, like your theme does</div>
+
+    <div class="feat">Variants at different prices</div>
+    <div class="copy">One number, sometimes the wrong one</div>
+    <div class="uno-cell">The full range, low to high</div>
+
+    <div class="feat">International visitors</div>
+    <div class="copy">Store currency for everyone</div>
+    <div class="uno-cell">Converted by Shopify Markets, per visitor</div>
+
+    <div class="feat">Collections in the menu</div>
+    <div class="copy">A copied list of products</div>
+    <div class="uno-cell">The live collection, new products included</div>
+
+    <div class="feat">Button labels</div>
+    <div class="copy">One language</div>
+    <div class="uno-cell">24 languages, following each visitor</div>
+  </div>
+  <p class="note">Every line in the Uno column describes shipped behavior you can test on a development store before installing on your live theme. The snapshot column describes what copied data can and cannot do by construction, whichever app does the copying.</p>
+</section>
+
+<section class="cta wrap">
+  <a href="https://apps.shopify.com/uno-mega-menu">Install Uno on Shopify</a>
+  <p>Free plan available. Menus render server-side, with no flash on page load.</p>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 Uno Mega Menu</p>
+    <div class="links">
+      <a href="mailto:m.vawda.pro@gmail.com">m.vawda.pro@gmail.com</a>
+      <a href="/tutorial/">Getting started</a>
+      <a href="/privacy/">Privacy policy</a>
+      <a href="/terms/">Terms of Service</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
