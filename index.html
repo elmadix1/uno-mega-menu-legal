@@ -42,6 +42,9 @@
   nav.site{ display:flex; align-items:center; gap:20px; }
   nav.site a{ text-decoration:none; color:var(--ink-dim); font-size:14px; font-weight:500; }
   nav.site a:hover, nav.site a:focus-visible{ color:var(--ink); }
+  /* Plus specifique que "nav.site a", sinon le gris des liens gagne et
+     rend le texte du bouton illisible sur son fond bleu. */
+  nav.site a.btn, nav.site a.btn:hover{ color:#fff; }
   nav.site .btn{ padding:9px 16px; font-size:13.5px; }
   @media (max-width: 720px){ nav.site a.navlink{ display:none; } }
 
