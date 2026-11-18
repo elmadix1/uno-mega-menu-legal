@@ -90,6 +90,32 @@
   .quote{ margin-top:16px; background:var(--panel); border-radius:14px; padding:20px 22px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
   .quote p{ margin:0; color:var(--ink-dim); font-size:14.5px; line-height:1.6; max-width:760px; }
   .quote strong{ color:var(--ink); }
+  .brands{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  @media (max-width:900px){ .brands{ grid-template-columns:1fr; } }
+  .pcard{ background:linear-gradient(180deg,rgba(201,162,75,.10),rgba(255,255,255,.03)); border:1px solid rgba(201,162,75,.35); border-radius:14px; padding:26px 22px; display:flex; flex-direction:column; }
+  .pcard .eyebrow{ font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--gold); margin-bottom:8px; }
+  .pcard h3{ font-family:'Poppins',sans-serif; font-size:20px; margin:0 0 6px; }
+  .pcard .for{ color:var(--ink-dim); font-size:14px; line-height:1.55; margin-bottom:16px; min-height:66px; }
+  .pcard .price{ font-family:'Poppins',sans-serif; font-weight:700; font-size:28px; line-height:1.1; }
+  .pcard .once{ font-size:12.5px; color:var(--ink-dim); margin:6px 0 16px; line-height:1.5; }
+  .pcard ul{ list-style:none; margin:0 0 22px; padding:0; flex:1; }
+  .pcard li{ font-size:13.5px; color:var(--ink-dim); padding:7px 0 7px 22px; border-top:1px solid var(--line); position:relative; line-height:1.5; }
+  .pcard li:first-child{ border-top:none; }
+  .pcard li::before{ content:"\2713"; position:absolute; left:0; color:var(--gold); font-weight:700; }
+  .pcard li strong{ color:var(--ink); font-weight:600; }
+  .pcard a.cta{ display:block; text-align:center; background:var(--gold); color:#1a1a1a; text-decoration:none; padding:13px; border-radius:9px; font-weight:700; font-size:14.5px; }
+  .pcard a.cta:hover{ filter:brightness(1.08); }
+  .measure{ margin-top:16px; background:var(--panel); border-radius:14px; padding:24px; display:grid; grid-template-columns:1.1fr 1fr; gap:26px; align-items:center; }
+  @media (max-width:800px){ .measure{ grid-template-columns:1fr; } }
+  .measure h3{ font-family:'Poppins',sans-serif; font-size:18px; margin:0 0 8px; }
+  .measure p{ margin:0; color:var(--ink-dim); font-size:14.5px; line-height:1.7; }
+  .report{ background:#16171c; border:1px solid var(--line); border-radius:12px; padding:16px 18px; }
+  .report .lbl{ font-size:11px; letter-spacing:.07em; text-transform:uppercase; color:var(--ink-faint); margin-bottom:10px; }
+  .report .row{ display:flex; align-items:center; gap:10px; font-size:13px; color:var(--ink-dim); padding:5px 0; }
+  .report .row span:first-child{ width:112px; flex:none; color:var(--ink); }
+  .report .row i{ height:8px; border-radius:4px; background:var(--accent); display:block; }
+  .report .row b{ margin-left:auto; color:var(--ink); font-variant-numeric:tabular-nums; }
+  .report small{ display:block; margin-top:10px; color:var(--ink-faint); font-size:12px; }
   .note{ color:var(--ink-faint); font-size:13px; line-height:1.6; margin:14px 0 0; text-align:center; }
 
   .tablewrap{ overflow-x:auto; background:var(--panel); border-radius:14px; padding:6px 22px; }
@@ -138,7 +164,7 @@
 <header class="site">
   <div class="wrap">
     <a class="brand" href="/"><span class="mark">U</span>Uno Mega Menu</a>
-    <nav class="site"><a href="#tiers">Prices</a><a href="#total">Full cost</a><a href="#how">How it works</a><a href="#faq">Questions</a></nav>
+    <nav class="site"><a href="#tiers">Prices</a><a href="#brands">For brands</a><a href="#total">Full cost</a><a href="#how">How it works</a><a href="#faq">Questions</a></nav>
   </div>
 </header>
 
@@ -185,7 +211,7 @@
 
 <section class="sec wrap" id="tiers">
   <h2>Three fixed prices</h2>
-  <p class="intro">Each price is paid once for the build. It includes switching the menu on in your theme and hiding your old menu, so what you receive is live and finished.</p>
+  <p class="intro">For most stores, one of these three is all you need. Each price is paid once for the build. It includes switching the menu on in your theme and hiding your old menu, so what you receive is live and finished.</p>
   <div class="grid">
     <div class="card">
       <h3>Express</h3>
@@ -245,10 +271,95 @@
     </div>
   </div>
   <div class="quote">
-    <p><strong>Bigger project?</strong> Several stores, more than 250 links, a custom theme, an older theme or a full navigation rebuild. Quotes start at $499. You get a priced reply within one business day and work starts on a 50% deposit.</p>
-    <a class="btn ghost" href="mailto:m.vawda.pro@gmail.com?subject=Custom%20quote%20request&amp;body=Store%20address%20%28ends%20in%20.myshopify.com%29%3A%0ATier%3A%20Custom%20quote%0AWhat%20I%20sell%3A%0AA%20store%20whose%20menu%20I%20like%3A%0ADeadline%2C%20if%20any%3A%0A">Request a quote</a>
+    <p><strong>Running an established brand?</strong> Several stores, several countries or a catalog that has outgrown its navigation. There is a dedicated offer, with the results measured.</p>
+    <a class="btn ghost" href="#brands">See the brand offers</a>
   </div>
   <p class="note">Prices in US dollars. You can pay by card in your own currency. An item is an entry of your top navigation bar. A link is any clickable line inside a panel.</p>
+</section>
+
+<section class="sec wrap" id="brands">
+  <p class="kicker" style="display:block;text-align:center;color:var(--gold)">For established brands</p>
+  <h2>When the menu is a revenue channel, not a list of links</h2>
+  <p class="intro">Every visitor sees your navigation, on every page, before anything else. For a brand with real traffic, how it is organised decides what gets found and what gets bought. These offers treat it that way: a structure designed for your catalog, built for you, then tuned on the numbers.</p>
+  <div class="brands">
+    <div class="pcard">
+      <div class="eyebrow">Launch</div>
+      <h3>Flagship build</h3>
+      <div class="for">For a brand that wants a menu that looks designed for it, live in two weeks, with nothing left to do.</div>
+      <div class="price">$799</div>
+      <div class="once">one-time payment · live in 10 business days</div>
+      <ul>
+        <li>Everything in Signature</li>
+        <li><strong>Two structure proposals</strong> to choose from before I build</li>
+        <li><strong>Custom design</strong>: styling written for your brand, beyond colors and fonts</li>
+        <li>3 panel banners created from your photos</li>
+        <li>2 extra languages translated by hand</li>
+        <li>3 months of monthly care included</li>
+      </ul>
+      <a class="cta" href="mailto:m.vawda.pro@gmail.com?subject=Flagship%20build%20%24799&amp;body=Offer%3A%20Flagship%20build%2C%20%24799%0AStore%20address%3A%0AWhat%20you%20sell%3A%0ANumber%20of%20products%20and%20collections%2C%20roughly%3A%0ACountries%20and%20languages%20you%20sell%20in%3A%0ANumber%20of%20stores%3A%0AWhat%20you%20want%20the%20menu%20to%20achieve%3A%0AIdeal%20start%20date%3A%0A">Start a Flagship build</a>
+    </div>
+
+    <div class="pcard">
+      <div class="eyebrow">Rethink</div>
+      <h3>Navigation revamp</h3>
+      <div class="for">For a catalog that has outgrown its menu: too many collections, shoppers who cannot find the right one, best sellers buried.</div>
+      <div class="price">from $1,500</div>
+      <div class="once">one-time payment · 3 to 4 weeks · 50% deposit</div>
+      <ul>
+        <li><strong>Audit</strong> of your current navigation, collection by collection</li>
+        <li><strong>New structure</strong> built around how your shoppers look for products</li>
+        <li>Flagship build of the new menu, custom design included</li>
+        <li>Your seasonal menus for the next 12 months, scheduled in advance</li>
+        <li><strong>90 days of tuning</strong> on your menu analytics, with a written report each month</li>
+      </ul>
+      <a class="cta" href="mailto:m.vawda.pro@gmail.com?subject=Navigation%20revamp&amp;body=Offer%3A%20Navigation%20revamp%2C%20from%20%241%2C500%0AStore%20address%3A%0AWhat%20you%20sell%3A%0ANumber%20of%20products%20and%20collections%2C%20roughly%3A%0ACountries%20and%20languages%20you%20sell%20in%3A%0ANumber%20of%20stores%3A%0AWhat%20you%20want%20the%20menu%20to%20achieve%3A%0AIdeal%20start%20date%3A%0A">Request a proposal</a>
+    </div>
+
+    <div class="pcard">
+      <div class="eyebrow">Delegate</div>
+      <h3>Annual partner</h3>
+      <div class="for">For a team that never wants to think about its menu again, across one store or several.</div>
+      <div class="price">from $2,900 a year</div>
+      <div class="once">or from $290 a month · yearly billing gives two months free</div>
+      <ul>
+        <li>Navigation revamp to start the year</li>
+        <li><strong>Every campaign prepared</strong>: sales, launches, holidays, built and scheduled for you</li>
+        <li>Up to 4 batches of menu updates a month, each live within 2 business days</li>
+        <li><strong>Quarterly review</strong>: which menu elements earn, which to replace</li>
+        <li>Several stores, countries and languages priced in your proposal, from $3,000 a year</li>
+      </ul>
+      <a class="cta" href="mailto:m.vawda.pro@gmail.com?subject=Annual%20partner&amp;body=Offer%3A%20Annual%20partner%2C%20from%20%242%2C900%20a%20year%0AStore%20address%3A%0AWhat%20you%20sell%3A%0ANumber%20of%20products%20and%20collections%2C%20roughly%3A%0ACountries%20and%20languages%20you%20sell%20in%3A%0ANumber%20of%20stores%3A%0AWhat%20you%20want%20the%20menu%20to%20achieve%3A%0AIdeal%20start%20date%3A%0A">Request a proposal</a>
+    </div>
+  </div>
+
+  <div class="measure">
+    <div>
+      <h3>You see what the menu earns</h3>
+      <p>Uno Mega Menu counts clicks, add-to-carts and sales for each element of your menu. When an order contains an item added from the menu, the sale and its amount are credited to the element that sold it. So the tuning is not guesswork. I keep what earns, I replace what does not and you get the figures in writing.</p>
+    </div>
+    <div class="report" aria-hidden="true">
+      <div class="lbl">Example of a monthly report</div>
+      <div class="row"><span>Best sellers</span><i style="width:46%"></i><b>42%</b></div>
+      <div class="row"><span>New arrivals</span><i style="width:30%"></i><b>27%</b></div>
+      <div class="row"><span>Gift sets</span><i style="width:20%"></i><b>18%</b></div>
+      <div class="row"><span>Sale</span><i style="width:14%"></i><b>13%</b></div>
+      <small>Share of menu revenue per element. Illustrative figures, not a client result.</small>
+    </div>
+  </div>
+
+  <div class="two">
+    <div class="box">
+      <h3>How a brand project starts</h3>
+      <p><strong>1. You write to me</strong> with your store and what you want the menu to achieve. The button prepares the message.</p>
+      <p><strong>2. You get a written proposal</strong> within 2 business days: scope, timeline, fixed price. A call is possible if you prefer one.</p>
+      <p><strong>3. Work starts on a 50% deposit.</strong> The balance is due when the menu is live.</p>
+    </div>
+    <div class="box">
+      <h3>Something truly specific?</h3>
+      <p>Custom development around the menu, a migration from another menu app or work on a heavily modified theme is priced at <strong>$450 a day</strong>, with a free written estimate before anything starts.</p>
+      <p><a href="mailto:m.vawda.pro@gmail.com?subject=Custom%20work%20estimate&amp;body=Offer%3A%20Custom%20work%2C%20%24450%20a%20day%0AStore%20address%3A%0AWhat%20you%20sell%3A%0ANumber%20of%20products%20and%20collections%2C%20roughly%3A%0ACountries%20and%20languages%20you%20sell%20in%3A%0ANumber%20of%20stores%3A%0AWhat%20you%20want%20the%20menu%20to%20achieve%3A%0AIdeal%20start%20date%3A%0A">Ask for an estimate</a></p>
+    </div>
+  </div>
 </section>
 
 <section class="sec wrap" id="total">
@@ -303,6 +414,10 @@
       <tr><th>Option</th><th>What you get</th><th>Price</th></tr>
       <tr><td>More links</td><td>20 extra links on any tier</td><td><b>$19</b></td></tr>
       <tr><td>Another language</td><td>The whole menu translated by hand into one more language for your international shoppers</td><td><b>$29</b> per language</td></tr>
+      <tr><td>Custom design</td><td>Styling written for your brand on any tier: spacing, hover effects, animations, your own fonts<small>Needs the Plus plan of the app or higher</small></td><td><b>$149</b></td></tr>
+      <tr><td>Banner created for you</td><td>A panel banner designed from your photos, in your brand style</td><td><b>$39</b> per banner</td></tr>
+      <tr><td>Structure proposals</td><td>Two ways to organise your navigation, to choose from before I build</td><td><b>$99</b></td></tr>
+      <tr><td>Second store</td><td>The same menu installed and checked on another store</td><td><b>50%</b> of the tier</td></tr>
       <tr><td>Rush</td><td>Express tier live in 1 business day instead of 2</td><td><b>$49</b></td></tr>
       <tr><td>Extra revision</td><td>One more batch of changes after the included ones</td><td><b>$29</b></td></tr>
       <tr><td>Monthly care</td><td>One batch of menu updates every month: new collections, new featured products, your next seasonal menu<small>Stop whenever you like on monthly billing</small></td><td><b>$39 a month</b><small>or $390 a year, two months free</small></td></tr>
