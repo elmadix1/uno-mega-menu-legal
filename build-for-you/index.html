@@ -3,53 +3,128 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Uno Mega Menu: done-for-you setup</title>
-<meta name="description" content="I build your mega menu directly in your store. Pick a tier, grant limited access, approve the result.">
+<title>Uno Mega Menu: your mega menu built for you</title>
+<meta name="description" content="The maker of Uno Mega Menu builds your Shopify mega menu in your store and switches it on. Fixed prices from $49, live in 2 to 7 business days, full cost shown monthly and yearly.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg-top:#111216; --bg-bottom:#090a0d;
-    --accent:#3884ff; --gold:#c9a24b;
-    --ink:#f5f6f8; --ink-dim:#969ba5; --ink-faint:#5b606b;
+    --accent:#3884ff; --gold:#c9a24b; --green:#2fb67c;
+    --ink:#f5f6f8; --ink-dim:#a3a8b2; --ink-faint:#5b606b;
     --surface:#ffffff; --surface-ink:#1a1a1a; --surface-line:#e7e7e9;
+    --panel:rgba(255,255,255,.045); --line:rgba(255,255,255,.09);
   }
   *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
   body{ margin:0; font-family:'Inter',-apple-system,Segoe UI,sans-serif; color:var(--ink);
     background:linear-gradient(180deg,var(--bg-top) 0%,var(--bg-bottom) 100%); }
   a{ color:inherit; }
   .wrap{ max-width:1120px; margin:0 auto; padding:0 24px; }
   header.site{ padding:28px 0; }
-  header.site .wrap{ display:flex; align-items:center; justify-content:space-between; }
-  .brand{ display:flex; align-items:center; gap:10px; font-family:'Poppins',sans-serif; font-weight:700; font-size:17px; }
+  header.site .wrap{ display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+  .brand{ display:flex; align-items:center; gap:10px; font-family:'Poppins',sans-serif; font-weight:700; font-size:17px; text-decoration:none; }
   .brand .mark{ width:22px; height:22px; border-radius:6px; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:13px; color:#fff; font-weight:700; }
   nav.site a{ text-decoration:none; color:var(--ink-dim); font-size:14px; font-weight:500; margin-left:20px; }
   nav.site a:hover{ color:var(--ink); }
 
-  .hero{ padding:40px 0 8px; text-align:center; }
-  .hero h1{ font-family:'Poppins',sans-serif; font-weight:700; font-size:36px; margin:0 0 14px; }
-  .hero p{ color:var(--ink-dim); font-size:16px; max-width:560px; margin:0 auto; line-height:1.6; }
+  .hero{ padding:36px 0 10px; text-align:center; }
+  .kicker{ display:inline-block; font-size:12px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--accent); margin:0 0 14px; }
+  .hero h1{ font-family:'Poppins',sans-serif; font-weight:700; font-size:40px; line-height:1.15; margin:0 0 16px; text-wrap:balance; }
+  .hero p.lead{ color:var(--ink-dim); font-size:17px; max-width:640px; margin:0 auto; line-height:1.6; }
+  .actions{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin:26px 0 18px; }
+  .btn{ display:inline-block; background:var(--accent); color:#fff; text-decoration:none; padding:13px 22px; border-radius:10px; font-weight:600; font-size:15px; }
+  .btn:hover{ filter:brightness(1.08); }
+  .btn.ghost{ background:transparent; border:1px solid var(--line); color:var(--ink); }
+  .proof{ display:flex; gap:10px 26px; justify-content:center; flex-wrap:wrap; list-style:none; margin:0; padding:0; color:var(--ink-dim); font-size:14px; }
+  .proof li::before{ content:"\2713"; color:var(--green); font-weight:700; margin-right:8px; }
 
-  .grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:16px; padding:44px 0; }
-  @media (max-width:900px){ .grid{ grid-template-columns:1fr 1fr; } }
-  @media (max-width:560px){ .grid{ grid-template-columns:1fr; } }
-  .card{ background:var(--surface); color:var(--surface-ink); border-radius:14px; padding:26px 22px; display:flex; flex-direction:column; border:1px solid transparent; }
-  .card.popular{ border-color:#1a1a1a; }
+  .shot{ margin:38px auto 0; max-width:900px; background:#fff; border-radius:14px; overflow:hidden; color:#1a1a1a; box-shadow:0 30px 80px rgba(0,0,0,.45); }
+  .shot .bar{ display:flex; gap:26px; padding:16px 24px; background:#16171c; color:#fff; font-weight:600; font-size:14px; flex-wrap:wrap; }
+  .shot .bar span.on{ border-bottom:2px solid #fff; padding-bottom:3px; }
+  .shot .pill{ font-size:10px; font-weight:700; padding:2px 6px; border-radius:5px; margin-left:6px; vertical-align:middle; }
+  .shot .pill.new{ background:var(--accent); } .shot .pill.sale{ background:#e5484d; }
+  .shot .panel{ display:grid; grid-template-columns:1fr 1fr 2.2fr; gap:26px; padding:24px; text-align:left; }
+  .shot h4{ font-size:11px; letter-spacing:.07em; text-transform:uppercase; color:#8a8d94; margin:0 0 10px; }
+  .shot .panel a{ display:block; font-size:14px; padding:4px 0; text-decoration:none; color:#1a1a1a; }
+  .shot .cards{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+  .shot .sw{ aspect-ratio:1/1; border-radius:8px; margin-bottom:8px; }
+  .shot .cards p{ margin:0; font-size:13px; font-weight:600; }
+  .shot .cards span{ font-size:12.5px; color:#555; } .shot .cards s{ color:#9a9a9a; margin-right:4px; }
+  .shot .cards em{ display:block; font-style:normal; font-size:11.5px; font-weight:600; margin-top:6px; padding:5px 0; text-align:center; border-radius:6px; background:#16171c; color:#fff; }
+  .shot .ship{ padding:10px 24px 14px; background:#16171c; color:#fff; font-size:12.5px; text-align:center; }
+  .shot .ship i{ display:block; height:6px; max-width:260px; margin:7px auto 0; border-radius:4px; background:linear-gradient(to right,var(--green) 62%,rgba(255,255,255,.2) 62%); }
+  .caption{ color:var(--ink-faint); font-size:13px; text-align:center; margin:14px 0 0; }
+  @media (max-width:720px){ .shot .panel{ grid-template-columns:1fr 1fr; } .shot .cards{ grid-column:1/-1; } .hero h1{ font-size:30px; } }
+
+  section.sec{ padding:64px 0 0; }
+  .sec h2{ font-family:'Poppins',sans-serif; font-size:26px; margin:0 0 10px; text-align:center; text-wrap:balance; }
+  .sec p.intro{ color:var(--ink-dim); font-size:15.5px; line-height:1.65; max-width:680px; margin:0 auto 30px; text-align:center; }
+
+  .three{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  @media (max-width:800px){ .three{ grid-template-columns:1fr; } }
+  .three div{ background:var(--panel); border-radius:14px; padding:22px; }
+  .three h3{ font-size:15.5px; margin:0 0 8px; }
+  .three p{ margin:0; color:var(--ink-dim); font-size:14.5px; line-height:1.65; }
+
+  .grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  @media (max-width:900px){ .grid{ grid-template-columns:1fr; } }
+  .card{ background:var(--surface); color:var(--surface-ink); border-radius:14px; padding:26px 22px; display:flex; flex-direction:column; border:2px solid transparent; }
+  .card.popular{ border-color:var(--accent); }
   .card.signature{ border-color:var(--gold); }
-  .tag{ display:inline-block; font-size:10px; font-weight:700; padding:3px 8px; border-radius:6px; background:#1a1a1a; color:#fff; margin-left:8px; vertical-align:middle; }
-  .card h2{ font-family:'Poppins',sans-serif; font-size:19px; margin:0 0 4px; }
-  .card .delivery{ color:#8a8d94; font-size:13.5px; margin-bottom:14px; }
-  .card .price{ font-family:'Poppins',sans-serif; font-weight:700; font-size:28px; margin-bottom:18px; }
+  .tag{ display:inline-block; font-size:10px; font-weight:700; padding:3px 8px; border-radius:6px; background:var(--accent); color:#fff; margin-left:8px; vertical-align:middle; }
+  .card h3{ font-family:'Poppins',sans-serif; font-size:20px; margin:0 0 4px; }
+  .card .for{ color:#5d616a; font-size:13.5px; line-height:1.5; margin-bottom:14px; min-height:40px; }
+  .card .price{ font-family:'Poppins',sans-serif; font-weight:700; font-size:34px; line-height:1; }
+  .card .once{ font-size:12.5px; color:#6b6f78; margin:6px 0 4px; }
+  .card .delivery{ font-size:13.5px; font-weight:600; margin-bottom:14px; }
+  .card .plan{ font-size:12.5px; color:#4d5159; background:#f1f3f7; border-radius:8px; padding:9px 11px; margin-bottom:14px; line-height:1.5; }
   .card ul{ list-style:none; margin:0 0 22px; padding:0; flex:1; }
-  .card li{ font-size:13.5px; padding:6px 0; border-top:1px solid var(--surface-line); }
+  .card li{ font-size:13.5px; padding:7px 0 7px 22px; border-top:1px solid var(--surface-line); position:relative; line-height:1.45; }
+  .card li::before{ content:"\2713"; position:absolute; left:0; color:var(--green); font-weight:700; }
   .card li:first-child{ border-top:none; }
-  .card a.cta{ display:block; text-align:center; background:#1a1a1a; color:#fff; text-decoration:none; padding:12px; border-radius:9px; font-weight:600; font-size:14px; }
-  .card a.cta:hover{ background:#000; }
+  .card a.cta{ display:block; text-align:center; background:#1a1a1a; color:#fff; text-decoration:none; padding:13px; border-radius:9px; font-weight:600; font-size:14.5px; }
+  .card.popular a.cta{ background:var(--accent); }
+  .card a.cta:hover{ filter:brightness(1.15); }
+  .quote{ margin-top:16px; background:var(--panel); border-radius:14px; padding:20px 22px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+  .quote p{ margin:0; color:var(--ink-dim); font-size:14.5px; line-height:1.6; max-width:760px; }
+  .quote strong{ color:var(--ink); }
+  .note{ color:var(--ink-faint); font-size:13px; line-height:1.6; margin:14px 0 0; text-align:center; }
 
-  .how{ background:rgba(255,255,255,.04); border-radius:14px; padding:26px; margin-bottom:60px; }
-  .how h2{ font-family:'Poppins',sans-serif; font-size:16px; margin:0 0 10px; }
-  .how p{ color:var(--ink-dim); font-size:14.5px; line-height:1.7; margin:0; }
+  .tablewrap{ overflow-x:auto; background:var(--panel); border-radius:14px; padding:6px 22px; }
+  table{ width:100%; border-collapse:collapse; min-width:640px; }
+  th,td{ text-align:left; font-size:14.5px; padding:13px 10px 13px 0; border-top:1px solid var(--line); color:var(--ink-dim); vertical-align:top; line-height:1.5; }
+  tr:first-child th{ border-top:none; color:var(--ink); font-weight:600; font-size:13px; letter-spacing:.03em; }
+  td:first-child{ color:var(--ink); font-weight:600; }
+  td b{ color:var(--ink); font-variant-numeric:tabular-nums; }
+  td small{ display:block; color:var(--ink-faint); font-size:12.5px; }
+  .two{ display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:16px; }
+  @media (max-width:800px){ .two{ grid-template-columns:1fr; } }
+  .box{ background:var(--panel); border-radius:14px; padding:22px; }
+  .box h3{ font-size:15.5px; margin:0 0 8px; }
+  .box p{ margin:0 0 8px; color:var(--ink-dim); font-size:14.5px; line-height:1.65; }
+  .box p:last-child{ margin-bottom:0; }
+  .box strong{ color:var(--ink); font-weight:600; }
+
+  .steps{ list-style:none; margin:0 auto; padding:0; counter-reset:step; max-width:760px; }
+  .steps li{ counter-increment:step; color:var(--ink-dim); font-size:15px; line-height:1.65; padding:12px 0 12px 44px; position:relative; border-top:1px solid var(--line); }
+  .steps li:first-child{ border-top:none; }
+  .steps li::before{ content:counter(step); position:absolute; left:0; top:12px; width:28px; height:28px; border-radius:50%; background:var(--accent); color:#fff; font-size:13px; font-weight:700; display:flex; align-items:center; justify-content:center; }
+  .steps strong{ color:var(--ink); font-weight:600; }
+
+  .faq{ max-width:760px; margin:0 auto; }
+  .faq details{ border-top:1px solid var(--line); padding:14px 0; }
+  .faq details:first-child{ border-top:none; }
+  .faq summary{ cursor:pointer; font-weight:600; font-size:15px; list-style:none; position:relative; padding-right:28px; }
+  .faq summary::-webkit-details-marker{ display:none; }
+  .faq summary::after{ content:"+"; position:absolute; right:0; top:-2px; font-size:20px; color:var(--ink-dim); }
+  .faq details[open] summary::after{ content:"\2212"; }
+  .faq p{ color:var(--ink-dim); font-size:14.5px; line-height:1.7; margin:10px 0 0; }
+
+  .final{ text-align:center; padding:70px 0 70px; }
+  .final h2{ font-family:'Poppins',sans-serif; font-size:28px; margin:0 0 10px; text-wrap:balance; }
+  .final p{ color:var(--ink-dim); font-size:15.5px; margin:0 auto; max-width:560px; line-height:1.6; }
 
   footer{ border-top:1px solid rgba(255,255,255,.08); padding:26px 0 40px; }
   footer .wrap{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; }
@@ -62,82 +137,216 @@
 
 <header class="site">
   <div class="wrap">
-    <div class="brand"><span class="mark">U</span>Uno Mega Menu</div>
-    <nav class="site"><a href="/">Home</a><a href="/tutorial/">Getting started</a><a href="/privacy/">Privacy</a></nav>
+    <a class="brand" href="/"><span class="mark">U</span>Uno Mega Menu</a>
+    <nav class="site"><a href="#tiers">Prices</a><a href="#total">Full cost</a><a href="#how">How it works</a><a href="#faq">Questions</a></nav>
   </div>
 </header>
 
 <section class="hero wrap">
-  <h1>Need a done-for-you menu?</h1>
-  <p>I build your menu directly in your store. Access limited to themes and apps: I see neither your orders nor your customers.</p>
+  <p class="kicker">Done-for-you service</p>
+  <h1>Your mega menu, built and switched on by the maker of the app</h1>
+  <p class="lead">You send a short brief. I build the menu in your Shopify store, with your products, your prices and your brand, then put it live. One fixed price, no meetings needed.</p>
+  <div class="actions">
+    <a class="btn" href="#tiers">See prices</a>
+    <a class="btn ghost" href="mailto:m.vawda.pro@gmail.com?subject=Question%20about%20the%20done-for-you%20menu">Ask a question</a>
+  </div>
+  <ul class="proof">
+    <li>Live in 2 to 7 business days</li>
+    <li>Fixed price from $49</li>
+    <li>No access to your orders or customers</li>
+    <li>Full refund until work starts</li>
+  </ul>
+
+  <div class="shot" aria-hidden="true">
+    <div class="bar"><span>New in<b class="pill new">NEW</b></span><span>Sale<b class="pill sale">SALE</b></span><span class="on">Skincare</span><span>Makeup</span><span>Fragrance</span></div>
+    <div class="panel">
+      <div><h4>Shop by need</h4><a>Hydration</a><a>Anti-aging</a><a>Sensitive skin</a><a>All skincare</a></div>
+      <div><h4>Shop by type</h4><a>Serums</a><a>Moisturizers</a><a>Masks</a><a>Gift sets</a></div>
+      <div class="cards">
+        <div><div class="sw" style="background:linear-gradient(135deg,#bfe9df,#8fd4c3)"></div><p>Dew Serum</p><span><s>$48.00</s>$39.00</span><em>Add to cart</em></div>
+        <div><div class="sw" style="background:linear-gradient(135deg,#c9c2ea,#a89ddb)"></div><p>Night Cream</p><span>$24.00 to $56.00</span><em>Choose options</em></div>
+        <div><div class="sw" style="background:linear-gradient(135deg,#f3d9c6,#e4b795)"></div><p>Clay Mask</p><span>$19.00</span><em>Add to cart</em></div>
+      </div>
+    </div>
+    <div class="ship">You are $12.00 away from free shipping<i></i></div>
+  </div>
+  <p class="caption">Illustration of a Business tier menu: links by need, featured products with live prices and a free shipping bar.</p>
 </section>
 
-<div class="grid wrap">
-  <div class="card">
-    <h2>Express</h2>
-    <div class="delivery">Delivered in 48 business hours</div>
-    <div class="price">49 $</div>
-    <ul>
-      <li>1 full mega menu</li>
-      <li>Up to 10 navigation entries</li>
-      <li>NEW, SALE, HOT badges placed</li>
-      <li>Your colors and your font</li>
-      <li>Links checked before delivery</li>
-      <li>1 revision included</li>
-    </ul>
-    <a class="cta" href="mailto:m.vawda.pro@gmail.com?subject=Express%20tier%20%2449">Order Express</a>
+<section class="sec wrap">
+  <h2>Why hand it over</h2>
+  <p class="intro">Your menu is on every page of your store. It is the element your shoppers use most. Building a good one takes an afternoon you probably do not have.</p>
+  <div class="three">
+    <div><h3>You keep your time</h3><p>You fill in one short brief. I do the structure, the links, the products, the styling and the checks on desktop and phone.</p></div>
+    <div><h3>It is built to sell</h3><p>Products with live prices and a buy button inside the menu, sale prices struck through, a free shipping bar and badges on what is new.</p></div>
+    <div><h3>Your live store stays safe</h3><p>I work on a copy of your theme. Nothing changes for your shoppers until you have approved the preview.</p></div>
   </div>
+</section>
 
-  <div class="card popular">
-    <h2>Business<span class="tag">POPULAR</span></h2>
-    <div class="delivery">Delivered in 4 business days</div>
-    <div class="price">99 $</div>
-    <ul>
-      <li>Everything in Express</li>
-      <li>Up to 20 entries plus tabs</li>
-      <li>Featured products in a grid</li>
-      <li>Shipping bar configured</li>
-      <li>Automatic NEW badges</li>
-      <li>2 revisions included</li>
-    </ul>
-    <a class="cta" href="mailto:m.vawda.pro@gmail.com?subject=Business%20tier%20%2499">Order Business</a>
-  </div>
+<section class="sec wrap" id="tiers">
+  <h2>Three fixed prices</h2>
+  <p class="intro">Each price is paid once for the build. It includes switching the menu on in your theme and hiding your old menu, so what you receive is live and finished.</p>
+  <div class="grid">
+    <div class="card">
+      <h3>Express</h3>
+      <div class="for">For a simple catalog that needs one clean, organised menu.</div>
+      <div class="price">$49</div>
+      <div class="once">one-time payment</div>
+      <div class="delivery">Live in 2 business days</div>
+      <div class="plan">Runs on the <strong>Free</strong> plan of the app. Nothing else to pay.</div>
+      <ul>
+        <li>Up to 6 items in your top navigation</li>
+        <li>1 mega panel with columns, up to 40 links in total</li>
+        <li>NEW, SALE and HOT badges placed</li>
+        <li>Your colors and your font</li>
+        <li>Menu switched on, old menu hidden</li>
+        <li>Every link checked, desktop and phone</li>
+        <li>1 revision included</li>
+      </ul>
+      <a class="cta" href="mailto:m.vawda.pro@gmail.com?subject=Express%20tier%20%2449&amp;body=Store%20address%20%28ends%20in%20.myshopify.com%29%3A%0ATier%3A%20Express%2C%20%2449%0AWhat%20I%20sell%3A%0AA%20store%20whose%20menu%20I%20like%3A%0ADeadline%2C%20if%20any%3A%0A">Order Express</a>
+    </div>
 
-  <div class="card signature">
-    <h2>Signature<span class="tag" style="background:var(--gold);color:#1a1a1a;">SIGNATURE</span></h2>
-    <div class="delivery">Delivered in 7 business days</div>
-    <div class="price">199 $</div>
-    <ul>
-      <li>Everything in Business</li>
-      <li>Theme block activation done for you</li>
-      <li>Quick add enabled and tested</li>
-      <li>1 scheduled seasonal menu</li>
-      <li>Full mobile check</li>
-      <li>3 revisions included</li>
-    </ul>
-    <a class="cta" href="mailto:m.vawda.pro@gmail.com?subject=Signature%20tier%20%24199">Order Signature</a>
-  </div>
+    <div class="card popular">
+      <h3>Business<span class="tag">MOST CHOSEN</span></h3>
+      <div class="for">For a growing store that wants its products selling from the menu.</div>
+      <div class="price">$149</div>
+      <div class="once">one-time payment</div>
+      <div class="delivery">Live in 4 business days</div>
+      <div class="plan">Needs the <strong>Plus</strong> plan of the app: $19.99 a month or $199.90 a year, after a 14-day free trial.</div>
+      <ul>
+        <li>Everything in Express</li>
+        <li>Up to 8 top items, up to 4 mega panels or tabbed panels, 120 links in total</li>
+        <li>Up to 8 featured products with live price and buy button</li>
+        <li>Collection columns that follow your catalog on their own</li>
+        <li>Free shipping bar set to your threshold</li>
+        <li>Automatic NEW badges on recent products</li>
+        <li>2 revisions included</li>
+      </ul>
+      <a class="cta" href="mailto:m.vawda.pro@gmail.com?subject=Business%20tier%20%24149&amp;body=Store%20address%20%28ends%20in%20.myshopify.com%29%3A%0ATier%3A%20Business%2C%20%24149%0AWhat%20I%20sell%3A%0AA%20store%20whose%20menu%20I%20like%3A%0ADeadline%2C%20if%20any%3A%0A">Order Business</a>
+    </div>
 
-  <div class="card">
-    <h2>Request a quote</h2>
-    <div class="delivery">Priced reply within 24h</div>
-    <div class="price">from 299 $</div>
-    <ul>
-      <li>Multi-store</li>
-      <li>More than 30 entries</li>
-      <li>Full rebuild</li>
-      <li>50% deposit to start</li>
-    </ul>
-    <a class="cta" href="mailto:m.vawda.pro@gmail.com?subject=Custom%20quote%20request">Request a quote</a>
+    <div class="card signature">
+      <h3>Signature<span class="tag" style="background:var(--gold);color:#1a1a1a;">COMPLETE</span></h3>
+      <div class="for">For a brand that wants the full selling menu and its next campaign ready.</div>
+      <div class="price">$299</div>
+      <div class="once">one-time payment</div>
+      <div class="delivery">Live in 7 business days</div>
+      <div class="plan">Needs the <strong>Studio</strong> plan of the app: $29.99 a month or $299.90 a year, after a 14-day free trial.</div>
+      <ul>
+        <li>Everything in Business</li>
+        <li>Up to 10 top items, a panel on each, 250 links in total</li>
+        <li>Up to 16 featured products</li>
+        <li>One-tap buy on product links, enabled and tested</li>
+        <li>1 seasonal menu built and scheduled to go live and revert on its own</li>
+        <li>Menu analytics: clicks, carts and revenue per menu item</li>
+        <li>3 revisions included</li>
+      </ul>
+      <a class="cta" href="mailto:m.vawda.pro@gmail.com?subject=Signature%20tier%20%24299&amp;body=Store%20address%20%28ends%20in%20.myshopify.com%29%3A%0ATier%3A%20Signature%2C%20%24299%0AWhat%20I%20sell%3A%0AA%20store%20whose%20menu%20I%20like%3A%0ADeadline%2C%20if%20any%3A%0A">Order Signature</a>
+    </div>
   </div>
-</div>
+  <div class="quote">
+    <p><strong>Bigger project?</strong> Several stores, more than 250 links, a custom theme, an older theme or a full navigation rebuild. Quotes start at $499. You get a priced reply within one business day and work starts on a 50% deposit.</p>
+    <a class="btn ghost" href="mailto:m.vawda.pro@gmail.com?subject=Custom%20quote%20request&amp;body=Store%20address%20%28ends%20in%20.myshopify.com%29%3A%0ATier%3A%20Custom%20quote%0AWhat%20I%20sell%3A%0AA%20store%20whose%20menu%20I%20like%3A%0ADeadline%2C%20if%20any%3A%0A">Request a quote</a>
+  </div>
+  <p class="note">Prices in US dollars. You can pay by card in your own currency. An item is an entry of your top navigation bar. A link is any clickable line inside a panel.</p>
+</section>
 
-<div class="wrap">
-  <div class="how">
-    <h2>How it works</h2>
-    <p>1. You pick a tier and contact me. 2. You grant collaborator access limited to themes and apps, revocable anytime. 3. I build your menu, you approve, I activate the block. A revision is one batch of changes sent in a single message, valid 14 days after delivery. Extra revision: 29 $.</p>
+<section class="sec wrap" id="total">
+  <h2>What it costs in total, monthly or yearly</h2>
+  <p class="intro">There are two separate things. The <strong>build</strong> is paid once, to me. The <strong>app subscription</strong> is billed by Shopify on your usual Shopify invoice. You choose monthly or yearly billing. Here is the full picture for your first year.</p>
+  <div class="tablewrap">
+    <table>
+      <tr><th>Tier</th><th>Build, paid once</th><th>App plan, billed monthly</th><th>App plan, billed yearly</th><th>First year in total</th></tr>
+      <tr>
+        <td>Express</td>
+        <td><b>$49</b></td>
+        <td><b>$0</b><small>Free plan, no time limit</small></td>
+        <td><b>$0</b></td>
+        <td><b>$49</b></td>
+      </tr>
+      <tr>
+        <td>Business</td>
+        <td><b>$149</b></td>
+        <td><b>$19.99 a month</b><small>$239.88 over 12 months</small></td>
+        <td><b>$199.90 a year</b><small>equals $16.66 a month, saves $39.98</small></td>
+        <td><b>$388.88</b> monthly billing<small><b>$348.90</b> yearly billing</small></td>
+      </tr>
+      <tr>
+        <td>Signature</td>
+        <td><b>$299</b></td>
+        <td><b>$29.99 a month</b><small>$359.88 over 12 months</small></td>
+        <td><b>$299.90 a year</b><small>equals $24.99 a month, saves $59.98</small></td>
+        <td><b>$658.88</b> monthly billing<small><b>$598.90</b> yearly billing</small></td>
+      </tr>
+    </table>
   </div>
-</div>
+  <div class="two">
+    <div class="box">
+      <h3>Monthly or yearly: which one?</h3>
+      <p><strong>Monthly</strong> costs a little more and you can stop at any time. Choose it if you are still testing.</p>
+      <p><strong>Yearly</strong> is paid once for 12 months and gives you two months free. Choose it once you know the menu is staying.</p>
+      <p>Either way the first 14 days are free, so your finished menu is live before your first charge.</p>
+    </div>
+    <div class="box">
+      <h3>From the second year</h3>
+      <p>The build is behind you. You only keep the app plan: <strong>$0</strong> for Express, <strong>$199.90 a year</strong> for Business, <strong>$299.90 a year</strong> for Signature on yearly billing.</p>
+      <p>If you move down to a lower plan later, the menu stays and the features of the higher plan switch off.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec wrap">
+  <h2>Options</h2>
+  <p class="intro">Add what you need. Each option is priced up front, so the total never surprises you.</p>
+  <div class="tablewrap">
+    <table>
+      <tr><th>Option</th><th>What you get</th><th>Price</th></tr>
+      <tr><td>More links</td><td>20 extra links on any tier</td><td><b>$19</b></td></tr>
+      <tr><td>Another language</td><td>The whole menu translated by hand into one more language for your international shoppers</td><td><b>$29</b> per language</td></tr>
+      <tr><td>Rush</td><td>Express tier live in 1 business day instead of 2</td><td><b>$49</b></td></tr>
+      <tr><td>Extra revision</td><td>One more batch of changes after the included ones</td><td><b>$29</b></td></tr>
+      <tr><td>Monthly care</td><td>One batch of menu updates every month: new collections, new featured products, your next seasonal menu<small>Stop whenever you like on monthly billing</small></td><td><b>$39 a month</b><small>or $390 a year, two months free</small></td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="sec wrap" id="how">
+  <h2>How it works</h2>
+  <p class="intro">Five steps. Your part takes about fifteen minutes.</p>
+  <ol class="steps">
+    <li><strong>You choose a tier and email me.</strong> The button opens a message with the few things I need to know. I reply within one business day with a short brief and a secure payment link.</li>
+    <li><strong>You pay and approve my access.</strong> Shopify sends you my access request, limited to apps and themes. You approve it in one click and can remove it at any time.</li>
+    <li><strong>I build on a copy of your theme.</strong> Your live store does not change while I work.</li>
+    <li><strong>You review the preview.</strong> I send you a private link. You send all your changes in one message.</li>
+    <li><strong>I put it live.</strong> I switch the menu on in your live theme, hide your old menu and check every link on desktop and phone.</li>
+  </ol>
+</section>
+
+<section class="sec wrap" id="faq">
+  <h2>Questions</h2>
+  <p class="intro">The answers merchants ask for before ordering.</p>
+  <div class="faq">
+    <details><summary>Who builds my menu?</summary><p>I do. I am Mohamed, the developer of Uno Mega Menu. I am based in Mauritius (GMT+4) and I reply within one business day.</p></details>
+    <details><summary>When does the delivery time start?</summary><p>When I have three things: your payment, your approved access and your completed brief. Business days are Monday to Friday.</p></details>
+    <details><summary>What do you need from me?</summary><p>The items you want in your navigation, the collections and products to feature, your brand colors and any banner images. Images are supplied by you, in the size I give you in the brief. If you are not sure about the structure, tell me what you sell and I will propose one.</p></details>
+    <details><summary>Do I have to install the app first?</summary><p>Yes. Install Uno Mega Menu from the Shopify App Store, it takes a minute and the Free plan costs nothing. For Business and Signature, start the free trial of the plan shown on the tier.</p></details>
+    <details><summary>How many products can the menu show?</summary><p>Shopify lets a menu show up to 20 hand-picked products with live price and buy button on a page. For larger selections I use collection columns, which have no such limit and always show the current products of the collection.</p></details>
+    <details><summary>Will it work with my theme?</summary><p>Yes on every Online Store 2.0 theme, which covers Dawn, Horizon and almost every theme sold today. Custom and older themes are handled on quote.</p></details>
+    <details><summary>What is a revision?</summary><p>One batch of changes sent in a single message, within 14 days of delivery. Changes that go beyond the tier you ordered are quoted before I start.</p></details>
+    <details><summary>Can I get a refund?</summary><p>Yes, in full, as long as I have not started building. Once the work has started, the included revisions are there to get the menu right.</p></details>
+    <details><summary>What can you see in my store?</summary><p>Apps and themes only. I cannot see your orders, your customers or your finances. I do not edit your theme files either: the menu is an app block that disappears if you uninstall the app.</p></details>
+    <details><summary>Can I edit the menu myself afterwards?</summary><p>Yes. Everything is built in the app's visual editor, so you can change a link, a product or a color yourself at any time. Monthly care is there if you would rather not.</p></details>
+  </div>
+</section>
+
+<section class="final wrap">
+  <h2>Ready to have it done?</h2>
+  <p>Pick your tier and send the message. You get a reply, a brief and a payment link within one business day.</p>
+  <div class="actions">
+    <a class="btn" href="#tiers">Choose a tier</a>
+    <a class="btn ghost" href="mailto:m.vawda.pro@gmail.com?subject=Question%20about%20the%20done-for-you%20menu">Ask a question first</a>
+  </div>
+</section>
 
 <footer>
   <div class="wrap">
@@ -145,6 +354,7 @@
     <div class="links">
       <a href="mailto:m.vawda.pro@gmail.com">m.vawda.pro@gmail.com</a>
       <a href="/">Home</a>
+      <a href="/tutorial/">Getting started</a>
       <a href="/privacy/">Privacy policy</a>
       <a href="/terms/">Terms of Service</a>
     </div>
