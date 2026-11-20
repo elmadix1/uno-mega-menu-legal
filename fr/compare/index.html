@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Uno Mega Menu&nbsp;: données en direct ou copie figée, ce que votre menu montre à vos visiteurs</title>
+<meta name="description" content="Une app de menu copie vos données produit une seule fois ou les lit en direct à chaque page vue. Voici ce que cette différence change pour vos prix, vos stocks et vos promotions.">
+<link rel="alternate" hreflang="en" href="https://unomegamenu.store/compare/">
+<link rel="alternate" hreflang="fr" href="https://unomegamenu.store/fr/compare/">
+<link rel="alternate" hreflang="x-default" href="https://unomegamenu.store/compare/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg-top:#111216; --bg-bottom:#090a0d;
+    --accent:#3884ff; --accent-dim:#2a63c2;
+    --ink:#f5f6f8; --ink-dim:#969ba5; --ink-faint:#5b606b;
+    --surface:#ffffff; --surface-ink:#1a1a1a; --surface-line:#e7e7e9;
+    --radius:14px;
+  }
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0; min-height:100vh;
+    font-family:'Inter',-apple-system,Segoe UI,sans-serif;
+    color:var(--ink);
+    background:linear-gradient(180deg,var(--bg-top) 0%,var(--bg-bottom) 100%);
+  }
+  a{ color:inherit; }
+  .wrap{ max-width:1040px; margin:0 auto; padding:0 24px; }
+
+  header.site{ padding:28px 0; }
+  header.site .wrap{ display:flex; align-items:center; justify-content:space-between; }
+  .brand{ display:flex; align-items:center; gap:10px; font-family:'Poppins',sans-serif; font-weight:700; font-size:17px; letter-spacing:-.01em; text-decoration:none; }
+  .brand .mark{ width:22px; height:22px; border-radius:6px; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:13px; color:#fff; font-weight:700; }
+  nav.site a{ text-decoration:none; color:var(--ink-dim); font-size:14px; font-weight:500; margin-left:20px; }
+  nav.site a:hover, nav.site a:focus-visible{ color:var(--ink); }
+
+  .hero{ padding:56px 0 20px; text-align:center; }
+  .hero h1{
+    font-family:'Poppins',sans-serif; font-weight:700; font-size:40px; line-height:1.15;
+    letter-spacing:-.02em; margin:0 0 18px; max-width:720px; margin-inline:auto;
+  }
+  .hero h1 .accent{ color:var(--accent); }
+  .hero p{ color:var(--ink-dim); font-size:17px; line-height:1.6; max-width:600px; margin:0 auto; }
+
+  .explain{ padding:40px 0 8px; max-width:640px; margin:0 auto; }
+  .explain h2{ font-family:'Poppins',sans-serif; font-size:20px; margin:32px 0 10px; letter-spacing:-.01em; }
+  .explain p{ color:var(--ink-dim); font-size:15.5px; line-height:1.7; margin:0 0 14px; }
+  .explain strong{ color:var(--ink); font-weight:600; }
+
+  .compare{ padding:40px 0 24px; }
+  .compare h2{
+    font-family:'Poppins',sans-serif; font-size:13px; text-transform:uppercase; letter-spacing:.08em;
+    color:var(--ink-faint); text-align:center; margin:0 0 28px; font-weight:600;
+  }
+  .table{
+    border-radius:16px; overflow:hidden; background:rgba(255,255,255,.08);
+    display:grid; grid-template-columns:1.2fr 1fr 1fr; gap:1px;
+    font-size:14px; line-height:1.5;
+  }
+  .table > div{ background:var(--bg-top); padding:16px 18px; }
+  .table .head{ font-family:'Poppins',sans-serif; font-weight:600; font-size:13px; color:var(--ink); }
+  .table .head.uno{ color:var(--accent); }
+  .table .feat{ color:var(--ink); font-weight:500; }
+  .table .copy{ color:var(--ink-dim); }
+  .table .uno-cell{ color:var(--ink); }
+  .table .uno-cell::before{ content:"✓ "; color:var(--accent); font-weight:700; }
+  @media (max-width: 720px){
+    .table{ grid-template-columns:1fr; font-size:13.5px; }
+    .table .feat{ background:#181a20; font-family:'Poppins',sans-serif; }
+    .table .head{ display:none; }
+    .table .copy::before{ content:"Copie figée\a0: "; color:var(--ink-faint); font-weight:600; }
+    .table .uno-cell::before{ content:"✓ Uno: "; }
+  }
+
+  .note{ max-width:640px; margin:28px auto 0; color:var(--ink-faint); font-size:13px; line-height:1.6; text-align:center; }
+
+  .cta{ text-align:center; padding:48px 0 72px; }
+  .cta a{
+    display:inline-block; background:var(--accent); color:#fff; text-decoration:none;
+    font-weight:600; font-size:15px; padding:13px 26px; border-radius:10px;
+  }
+  .cta a:hover{ background:var(--accent-dim); }
+  .cta p{ color:var(--ink-faint); font-size:13px; margin:12px 0 0; }
+
+  footer{ border-top:1px solid rgba(255,255,255,.08); padding:26px 0 40px; }
+  footer .wrap{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; }
+  footer p{ margin:0; font-size:13px; color:var(--ink-faint); }
+  footer .links{ display:flex; gap:18px; }
+  footer .links a{ font-size:13px; color:var(--ink-dim); text-decoration:none; }
+  footer .links a:hover{ color:var(--ink); }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ transition:none !important; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="/fr/"><span class="mark">U</span>Uno Mega Menu</a>
+    <nav class="site"><a href="/fr/tutorial/">Premiers pas</a><a href="/fr/privacy/">Confidentialité</a><a href="/compare/" lang="en" hreflang="en">English</a></nav>
+  </div>
+</header>
+
+<section class="hero wrap">
+  <h1>Votre menu affiche des prix.<br>Sont-ils <span class="accent">toujours vrais</span>&nbsp;?</h1>
+  <p>Une app de menu a deux façons de présenter vos produits aux visiteurs. Soit elle copie vos données produit une fois pour toutes, soit elle les lit en direct à chaque page vue. Ce seul choix de conception décide si votre menu peut mentir.</p>
+</section>
+
+<section class="explain wrap">
+  <h2>La copie figée</h2>
+  <p>La plupart des éditeurs de menu enregistrent une copie de chaque produit choisi&nbsp;: son nom, son image, son prix. La copie est prise le jour où vous créez le menu. Ensuite votre boutique bouge mais la copie reste figée. Baissez un prix, lancez une promotion ou écoulez une taille&nbsp;: le menu continue d'afficher le monde tel qu'il était.</p>
+  <p>Ce n'est pas un bug de ces apps. C'est leur conception. Un chiffre copié n'a aucun moyen de se mettre à jour.</p>
+
+  <h2>La lecture en direct</h2>
+  <p>Uno génère votre menu sur les serveurs de Shopify, au sein de votre boutique, au moment où chaque page se charge. Les cartes produit lisent le prix <strong>actuel</strong>, le stock <strong>actuel</strong> et la promotion <strong>en cours</strong> directement dans votre boutique. Aucune copie ne peut se périmer&nbsp;: rien à resynchroniser, rien à garder en tête.</p>
+</section>
+
+<section class="compare wrap">
+  <h2>Ce que cela change, ligne par ligne</h2>
+  <div class="table">
+    <div class="head">Dans le menu</div>
+    <div class="head">Copie figée</div>
+    <div class="head uno">Uno, lu en direct</div>
+
+    <div class="feat">Prix après modification</div>
+    <div class="copy">Continue d'afficher l'ancien prix</div>
+    <div class="uno-cell">Mis à jour dès la page vue suivante</div>
+
+    <div class="feat">Produit en promotion</div>
+    <div class="copy">Aucun moyen de le savoir</div>
+    <div class="uno-cell">Ancien prix barré à côté du prix promo</div>
+
+    <div class="feat">Produit épuisé</div>
+    <div class="copy">Affiche toujours un bouton d'ajout</div>
+    <div class="uno-cell">Marqué épuisé, bouton désactivé</div>
+
+    <div class="feat">Produit à plusieurs variantes</div>
+    <div class="copy">Ajoute une variante choisie à la place du client</div>
+    <div class="uno-cell">Invite le client à choisir les options, comme le fait votre thème</div>
+
+    <div class="feat">Variantes à prix différents</div>
+    <div class="copy">Un seul chiffre, parfois le mauvais</div>
+    <div class="uno-cell">Toute la fourchette, du plus bas au plus haut</div>
+
+    <div class="feat">Visiteurs internationaux</div>
+    <div class="copy">La devise de la boutique pour tout le monde</div>
+    <div class="uno-cell">Prix converti par Shopify Markets, pour chaque visiteur</div>
+
+    <div class="feat">Collections dans le menu</div>
+    <div class="copy">Une liste de produits copiée</div>
+    <div class="uno-cell">La collection en direct, nouveautés comprises</div>
+
+    <div class="feat">Libellés des boutons</div>
+    <div class="copy">Une seule langue</div>
+    <div class="uno-cell">24 langues, selon chaque visiteur</div>
+  </div>
+  <p class="note">Chaque ligne de la colonne Uno décrit un comportement déjà en service, que vous pouvez tester sur une boutique de développement avant d'installer l'app sur votre thème en ligne. La colonne «&nbsp;Copie figée&nbsp;» décrit ce que des données copiées peuvent faire ou non par construction, quelle que soit l'app qui copie.</p>
+</section>
+
+<section class="cta wrap">
+  <a href="https://apps.shopify.com/uno-mega-menu?locale=fr">Installer Uno sur Shopify</a>
+  <p>Plan gratuit disponible. Les menus sont rendus côté serveur, sans flash au chargement de la page.</p>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 Uno Mega Menu</p>
+    <div class="links">
+      <a href="mailto:m.vawda.pro@gmail.com">m.vawda.pro@gmail.com</a>
+      <a href="/fr/tutorial/">Premiers pas</a>
+      <a href="/fr/privacy/">Politique de confidentialité</a>
+      <a href="/fr/terms/">Conditions d'utilisation</a>
+      <a href="/compare/" lang="en" hreflang="en">English</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

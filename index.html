@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Uno Mega Menu: mega menus that sell, live data included</title>
 <meta name="description" content="Drag-and-drop mega menus for Shopify with live prices, stock states and promotions read straight from your store. Free plan, 14-day trial on paid plans.">
+<link rel="alternate" hreflang="en" href="https://unomegamenu.store/">
+<link rel="alternate" hreflang="fr" href="https://unomegamenu.store/fr/">
+<link rel="alternate" hreflang="x-default" href="https://unomegamenu.store/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
@@ -34,6 +37,29 @@
   .btn:hover{ background:var(--accent-dim); }
   .btn.ghost{ background:transparent; border:1px solid rgba(255,255,255,.2); }
   .btn.ghost:hover{ background:rgba(255,255,255,.06); }
+  nav.site a.dfy{ color:#e8c26a; border:1px solid rgba(232,194,106,.55); border-radius:99px; padding:6px 12px; }
+  nav.site a.dfy:hover{ background:rgba(232,194,106,.12); color:#f3d58e; }
+  .dfy-line{ margin:14px 0 0; font-size:14.5px; }
+  .dfy-line a{ color:#e8c26a; font-weight:600; text-decoration:none; border-bottom:1px solid rgba(232,194,106,.5); padding-bottom:1px; }
+  .dfy-line a:hover{ color:#f3d58e; }
+  .dfy-band{ margin:46px auto 8px; background:linear-gradient(135deg,rgba(232,194,106,.16),rgba(255,255,255,.03)); border:1px solid rgba(232,194,106,.45); border-radius:16px; padding:30px 30px; display:grid; grid-template-columns:1.25fr 1fr; gap:30px; align-items:center; }
+  .dfy-band .eyebrow{ font-size:11.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase; color:#e8c26a; margin:0 0 10px; }
+  .dfy-band h2{ font-family:'Poppins',sans-serif; font-size:26px; line-height:1.2; margin:0 0 10px; text-wrap:balance; }
+  .dfy-band p.txt{ margin:0 0 18px; color:var(--ink-dim); font-size:15.5px; line-height:1.65; }
+  .dfy-band .btn{ background:#e8c26a; color:#1a1a1a; font-weight:700; }
+  .dfy-band .btn:hover{ background:#f3d58e; }
+  .dfy-tiers{ list-style:none; margin:0; padding:0; }
+  .dfy-tiers li{ display:flex; justify-content:space-between; gap:14px; align-items:baseline; padding:11px 0; border-top:1px solid rgba(255,255,255,.1); font-size:14.5px; color:var(--ink-dim); }
+  .dfy-tiers li:first-child{ border-top:none; }
+  .dfy-tiers b{ color:var(--ink); font-weight:600; }
+  .dfy-tiers span{ color:#e8c26a; font-weight:700; white-space:nowrap; font-variant-numeric:tabular-nums; }
+  @media (max-width: 820px){ .dfy-band{ grid-template-columns:1fr; padding:24px 20px; } .dfy-band h2{ font-size:22px; } }
+  .dfy-strip{ margin:22px 0 0; border:1px solid rgba(232,194,106,.4); border-radius:12px; padding:16px 20px; display:flex; justify-content:space-between; align-items:center; gap:14px; flex-wrap:wrap; }
+  .dfy-strip p{ margin:0; color:var(--ink-dim); font-size:14.5px; line-height:1.55; }
+  .dfy-strip p strong{ color:var(--ink); }
+  .dfy-strip a{ color:#e8c26a; font-weight:700; text-decoration:none; white-space:nowrap; }
+  .final .or{ display:block; margin-top:16px; font-size:14.5px; }
+  .final .or a{ color:#e8c26a; font-weight:600; }
 
   /* ---- top bar ---- */
   header.site{ padding:24px 0; }
@@ -237,8 +263,9 @@
       <a class="navlink" href="#features">Features</a>
       <a class="navlink" href="#pricing">Pricing</a>
       <a class="navlink" href="#faq">FAQ</a>
-      <a class="navlink" href="/build-for-you/">Done for you</a>
+      <a class="navlink dfy" href="/build-for-you/">Done for you</a>
       <a class="btn" href="https://apps.shopify.com/uno-mega-menu">Install on Shopify</a>
+      <a class="navlink" href="/fr/" lang="fr" hreflang="fr">Français</a>
     </nav>
   </div>
 </header>
@@ -251,6 +278,7 @@
     <a class="btn ghost" href="#live">See why live data matters</a>
   </div>
   <p class="sub">Free plan available. Paid plans start at $9.99 with a 14-day trial.</p>
+  <p class="dfy-line">No time to build it? <a href="/build-for-you/">Have your menu built for you, from $49</a></p>
 </section>
 
 <p class="demo-label">What shoppers see. Hover Skincare.</p>
@@ -299,6 +327,23 @@
   <p class="demo-mobile-note">Full-screen, tap-friendly on mobile. This preview needs a wider screen to show the dropdown.</p>
 </div>
 <p class="demo-caption">Everything in this panel is live: the <strong>struck-through sale price</strong>, the <strong>price range</strong> on a multi-variant product and the <strong>sold out</strong> state. Change a price in Shopify and the menu follows on the next page view.</p>
+
+<section class="wrap">
+  <div class="dfy-band">
+    <div>
+      <p class="eyebrow">Done-for-you service</p>
+      <h2>Rather not build it yourself? The maker of the app builds it for you.</h2>
+      <p class="txt">You send a short brief. Your menu is built in your store with your products, your prices and your brand, then switched on. One fixed price, live in 2 to 7 business days, no access to your orders or customers.</p>
+      <a class="btn" href="/build-for-you/">See the done-for-you service</a>
+    </div>
+    <ul class="dfy-tiers">
+      <li><b>Express</b> one clean, organised menu <span>$49</span></li>
+      <li><b>Business</b> products selling from the menu <span>$149</span></li>
+      <li><b>Signature</b> the full selling menu <span>$299</span></li>
+      <li><b>For brands</b> navigation revamp, yearly partner <span>from $1,500</span></li>
+    </ul>
+  </div>
+</section>
 
 <section class="block wrap">
   <p class="kicker">How it works</p>
@@ -439,12 +484,20 @@
       <a class="btn ghost" href="https://apps.shopify.com/uno-mega-menu">Try Studio</a>
     </div>
   </div>
+  <div class="dfy-strip">
+    <p><strong>Want it set up for you?</strong> Pick a plan, then let the maker of the app build your menu and put it live. From $49, paid once.</p>
+    <a href="/build-for-you/">Done-for-you service &rarr;</a>
+  </div>
 </section>
 
 <section class="block wrap" id="faq">
   <p class="kicker">FAQ</p>
   <h2 class="title">Good questions</h2>
   <div class="faq">
+    <details>
+      <summary>Can you build the menu for me?</summary>
+      <p class="a">Yes. The done-for-you service builds your menu directly in your store and switches it on, for a fixed price from $49. You send a short brief, you approve a preview and you keep full control afterwards. <a href="/build-for-you/">See the tiers and prices</a>.</p>
+    </details>
     <details>
       <summary>Will it slow down my store?</summary>
       <p class="a">No. The menu arrives inside the page itself, so it shows up at the same moment as everything else: no visible loading, no late pop-in, no layout jump. The app ships under 30 KB of CSS and JavaScript combined, loads nothing from external servers and sends no request until a visitor interacts. Your navigation links are plain HTML, readable by search engines.</p>
@@ -484,6 +537,7 @@
   <h2>Your menu is your most visited page element</h2>
   <p>Make it sell. Set up takes minutes and the Free plan is free forever.</p>
   <a class="btn" href="https://apps.shopify.com/uno-mega-menu">Install Uno on Shopify</a>
+  <span class="or">Short on time? <a href="/build-for-you/">Have it built for you, from $49</a></span>
 </section>
 
 <footer>
@@ -496,6 +550,7 @@
       <a href="/tutorial/">Getting started</a>
       <a href="/privacy/">Privacy policy</a>
       <a href="/terms/">Terms of Service</a>
+      <a href="/fr/" lang="fr" hreflang="fr">Français</a>
     </div>
   </div>
 </footer>

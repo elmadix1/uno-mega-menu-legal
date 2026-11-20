@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Uno Mega Menu&nbsp;: votre mega menu clé en main</title>
+<meta name="description" content="Le créateur d'Uno Mega Menu construit votre mega menu dans votre boutique Shopify et l'active. Prix fixes à partir de 49&nbsp;$, en ligne en 2 à 7 jours ouvrés, coût complet affiché au mois et à l'année.">
+<link rel="alternate" hreflang="en" href="https://unomegamenu.store/build-for-you/">
+<link rel="alternate" hreflang="fr" href="https://unomegamenu.store/fr/build-for-you/">
+<link rel="alternate" hreflang="x-default" href="https://unomegamenu.store/build-for-you/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg-top:#111216; --bg-bottom:#090a0d;
+    --accent:#3884ff; --gold:#c9a24b; --green:#2fb67c;
+    --ink:#f5f6f8; --ink-dim:#a3a8b2; --ink-faint:#5b606b;
+    --surface:#ffffff; --surface-ink:#1a1a1a; --surface-line:#e7e7e9;
+    --panel:rgba(255,255,255,.045); --line:rgba(255,255,255,.09);
+  }
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{ margin:0; font-family:'Inter',-apple-system,Segoe UI,sans-serif; color:var(--ink);
+    background:linear-gradient(180deg,var(--bg-top) 0%,var(--bg-bottom) 100%); }
+  a{ color:inherit; }
+  .wrap{ max-width:1120px; margin:0 auto; padding:0 24px; }
+  header.site{ padding:28px 0; }
+  header.site .wrap{ display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+  .brand{ display:flex; align-items:center; gap:10px; font-family:'Poppins',sans-serif; font-weight:700; font-size:17px; text-decoration:none; }
+  .brand .mark{ width:22px; height:22px; border-radius:6px; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:13px; color:#fff; font-weight:700; }
+  nav.site a{ text-decoration:none; color:var(--ink-dim); font-size:14px; font-weight:500; margin-left:20px; }
+  nav.site a:hover{ color:var(--ink); }
+
+  .hero{ padding:36px 0 10px; text-align:center; }
+  .kicker{ display:inline-block; font-size:12px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--accent); margin:0 0 14px; }
+  .hero h1{ font-family:'Poppins',sans-serif; font-weight:700; font-size:40px; line-height:1.15; margin:0 0 16px; text-wrap:balance; }
+  .hero p.lead{ color:var(--ink-dim); font-size:17px; max-width:640px; margin:0 auto; line-height:1.6; }
+  .actions{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin:26px 0 18px; }
+  .btn{ display:inline-block; background:var(--accent); color:#fff; text-decoration:none; padding:13px 22px; border-radius:10px; font-weight:600; font-size:15px; }
+  .btn:hover{ filter:brightness(1.08); }
+  .btn.ghost{ background:transparent; border:1px solid var(--line); color:var(--ink); }
+  .proof{ display:flex; gap:10px 26px; justify-content:center; flex-wrap:wrap; list-style:none; margin:0; padding:0; color:var(--ink-dim); font-size:14px; }
+  .proof li::before{ content:"\2713"; color:var(--green); font-weight:700; margin-right:8px; }
+
+  .shot{ margin:38px auto 0; max-width:900px; background:#fff; border-radius:14px; overflow:hidden; color:#1a1a1a; box-shadow:0 30px 80px rgba(0,0,0,.45); }
+  .shot .bar{ display:flex; gap:26px; padding:16px 24px; background:#16171c; color:#fff; font-weight:600; font-size:14px; flex-wrap:wrap; }
+  .shot .bar span.on{ border-bottom:2px solid #fff; padding-bottom:3px; }
+  .shot .pill{ font-size:10px; font-weight:700; padding:2px 6px; border-radius:5px; margin-left:6px; vertical-align:middle; }
+  .shot .pill.new{ background:var(--accent); } .shot .pill.sale{ background:#e5484d; }
+  .shot .panel{ display:grid; grid-template-columns:1fr 1fr 2.2fr; gap:26px; padding:24px; text-align:left; }
+  .shot h4{ font-size:11px; letter-spacing:.07em; text-transform:uppercase; color:#8a8d94; margin:0 0 10px; }
+  .shot .panel a{ display:block; font-size:14px; padding:4px 0; text-decoration:none; color:#1a1a1a; }
+  .shot .cards{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+  .shot .sw{ aspect-ratio:1/1; border-radius:8px; margin-bottom:8px; }
+  .shot .cards p{ margin:0; font-size:13px; font-weight:600; }
+  .shot .cards span{ font-size:12.5px; color:#555; } .shot .cards s{ color:#9a9a9a; margin-right:4px; }
+  .shot .cards em{ display:block; font-style:normal; font-size:11.5px; font-weight:600; margin-top:6px; padding:5px 0; text-align:center; border-radius:6px; background:#16171c; color:#fff; }
+  .shot .ship{ padding:10px 24px 14px; background:#16171c; color:#fff; font-size:12.5px; text-align:center; }
+  .shot .ship i{ display:block; height:6px; max-width:260px; margin:7px auto 0; border-radius:4px; background:linear-gradient(to right,var(--green) 62%,rgba(255,255,255,.2) 62%); }
+  .caption{ color:var(--ink-faint); font-size:13px; text-align:center; margin:14px 0 0; }
+  @media (max-width:720px){ .shot .panel{ grid-template-columns:1fr 1fr; } .shot .cards{ grid-column:1/-1; } .hero h1{ font-size:30px; } }
+
+  section.sec{ padding:64px 0 0; }
+  .sec h2{ font-family:'Poppins',sans-serif; font-size:26px; margin:0 0 10px; text-align:center; text-wrap:balance; }
+  .sec p.intro{ color:var(--ink-dim); font-size:15.5px; line-height:1.65; max-width:680px; margin:0 auto 30px; text-align:center; }
+
+  .three{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  @media (max-width:800px){ .three{ grid-template-columns:1fr; } }
+  .three div{ background:var(--panel); border-radius:14px; padding:22px; }
+  .three h3{ font-size:15.5px; margin:0 0 8px; }
+  .three p{ margin:0; color:var(--ink-dim); font-size:14.5px; line-height:1.65; }
+
+  .grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  @media (max-width:900px){ .grid{ grid-template-columns:1fr; } }
+  .card{ background:var(--surface); color:var(--surface-ink); border-radius:14px; padding:26px 22px; display:flex; flex-direction:column; border:2px solid transparent; }
+  .card.popular{ border-color:var(--accent); }
+  .card.signature{ border-color:var(--gold); }
+  .tag{ display:inline-block; font-size:10px; font-weight:700; padding:3px 8px; border-radius:6px; background:var(--accent); color:#fff; margin-left:8px; vertical-align:middle; }
+  .card h3{ font-family:'Poppins',sans-serif; font-size:20px; margin:0 0 4px; }
+  .card .for{ color:#5d616a; font-size:13.5px; line-height:1.5; margin-bottom:14px; min-height:40px; }
+  .card .price{ font-family:'Poppins',sans-serif; font-weight:700; font-size:34px; line-height:1; }
+  .card .once{ font-size:12.5px; color:#6b6f78; margin:6px 0 4px; }
+  .card .delivery{ font-size:13.5px; font-weight:600; margin-bottom:14px; }
+  .card .plan{ font-size:12.5px; color:#4d5159; background:#f1f3f7; border-radius:8px; padding:9px 11px; margin-bottom:14px; line-height:1.5; }
+  .card ul{ list-style:none; margin:0 0 22px; padding:0; flex:1; }
+  .card li{ font-size:13.5px; padding:7px 0 7px 22px; border-top:1px solid var(--surface-line); position:relative; line-height:1.45; }
+  .card li::before{ content:"\2713"; position:absolute; left:0; color:var(--green); font-weight:700; }
+  .card li:first-child{ border-top:none; }
+  .card a.cta{ display:block; text-align:center; background:#1a1a1a; color:#fff; text-decoration:none; padding:13px; border-radius:9px; font-weight:600; font-size:14.5px; }
+  .card.popular a.cta{ background:var(--accent); }
+  .card a.cta:hover{ filter:brightness(1.15); }
+  .quote{ margin-top:16px; background:var(--panel); border-radius:14px; padding:20px 22px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+  .quote p{ margin:0; color:var(--ink-dim); font-size:14.5px; line-height:1.6; max-width:760px; }
+  .quote strong{ color:var(--ink); }
+  .brands{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  @media (max-width:900px){ .brands{ grid-template-columns:1fr; } }
+  .pcard{ background:linear-gradient(180deg,rgba(201,162,75,.10),rgba(255,255,255,.03)); border:1px solid rgba(201,162,75,.35); border-radius:14px; padding:26px 22px; display:flex; flex-direction:column; }
+  .pcard .eyebrow{ font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--gold); margin-bottom:8px; }
+  .pcard h3{ font-family:'Poppins',sans-serif; font-size:20px; margin:0 0 6px; }
+  .pcard .for{ color:var(--ink-dim); font-size:14px; line-height:1.55; margin-bottom:16px; min-height:66px; }
+  .pcard .price{ font-family:'Poppins',sans-serif; font-weight:700; font-size:28px; line-height:1.1; }
+  .pcard .once{ font-size:12.5px; color:var(--ink-dim); margin:6px 0 16px; line-height:1.5; }
+  .pcard ul{ list-style:none; margin:0 0 22px; padding:0; flex:1; }
+  .pcard li{ font-size:13.5px; color:var(--ink-dim); padding:7px 0 7px 22px; border-top:1px solid var(--line); position:relative; line-height:1.5; }
+  .pcard li:first-child{ border-top:none; }
+  .pcard li::before{ content:"\2713"; position:absolute; left:0; color:var(--gold); font-weight:700; }
+  .pcard li strong{ color:var(--ink); font-weight:600; }
+  .pcard a.cta{ display:block; text-align:center; background:var(--gold); color:#1a1a1a; text-decoration:none; padding:13px; border-radius:9px; font-weight:700; font-size:14.5px; }
+  .pcard a.cta:hover{ filter:brightness(1.08); }
+  .measure{ margin-top:16px; background:var(--panel); border-radius:14px; padding:24px; display:grid; grid-template-columns:1.1fr 1fr; gap:26px; align-items:center; }
+  @media (max-width:800px){ .measure{ grid-template-columns:1fr; } }
+  .measure h3{ font-family:'Poppins',sans-serif; font-size:18px; margin:0 0 8px; }
+  .measure p{ margin:0; color:var(--ink-dim); font-size:14.5px; line-height:1.7; }
+  .report{ background:#16171c; border:1px solid var(--line); border-radius:12px; padding:16px 18px; }
+  .report .lbl{ font-size:11px; letter-spacing:.07em; text-transform:uppercase; color:var(--ink-faint); margin-bottom:10px; }
+  .report .row{ display:flex; align-items:center; gap:10px; font-size:13px; color:var(--ink-dim); padding:5px 0; }
+  .report .row span:first-child{ width:112px; flex:none; color:var(--ink); }
+  .report .row i{ height:8px; border-radius:4px; background:var(--accent); display:block; }
+  .report .row b{ margin-left:auto; color:var(--ink); font-variant-numeric:tabular-nums; }
+  .report small{ display:block; margin-top:10px; color:var(--ink-faint); font-size:12px; }
+  .note{ color:var(--ink-faint); font-size:13px; line-height:1.6; margin:14px 0 0; text-align:center; }
+
+  .tablewrap{ overflow-x:auto; background:var(--panel); border-radius:14px; padding:6px 22px; }
+  table{ width:100%; border-collapse:collapse; min-width:640px; }
+  th,td{ text-align:left; font-size:14.5px; padding:13px 10px 13px 0; border-top:1px solid var(--line); color:var(--ink-dim); vertical-align:top; line-height:1.5; }
+  tr:first-child th{ border-top:none; color:var(--ink); font-weight:600; font-size:13px; letter-spacing:.03em; }
+  td:first-child{ color:var(--ink); font-weight:600; }
+  td b{ color:var(--ink); font-variant-numeric:tabular-nums; }
+  td small{ display:block; color:var(--ink-faint); font-size:12.5px; }
+  .two{ display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:16px; }
+  @media (max-width:800px){ .two{ grid-template-columns:1fr; } }
+  .box{ background:var(--panel); border-radius:14px; padding:22px; }
+  .box h3{ font-size:15.5px; margin:0 0 8px; }
+  .box p{ margin:0 0 8px; color:var(--ink-dim); font-size:14.5px; line-height:1.65; }
+  .box p:last-child{ margin-bottom:0; }
+  .box strong{ color:var(--ink); font-weight:600; }
+
+  .steps{ list-style:none; margin:0 auto; padding:0; counter-reset:step; max-width:760px; }
+  .steps li{ counter-increment:step; color:var(--ink-dim); font-size:15px; line-height:1.65; padding:12px 0 12px 44px; position:relative; border-top:1px solid var(--line); }
+  .steps li:first-child{ border-top:none; }
+  .steps li::before{ content:counter(step); position:absolute; left:0; top:12px; width:28px; height:28px; border-radius:50%; background:var(--accent); color:#fff; font-size:13px; font-weight:700; display:flex; align-items:center; justify-content:center; }
+  .steps strong{ color:var(--ink); font-weight:600; }
+
+  .faq{ max-width:760px; margin:0 auto; }
+  .faq details{ border-top:1px solid var(--line); padding:14px 0; }
+  .faq details:first-child{ border-top:none; }
+  .faq summary{ cursor:pointer; font-weight:600; font-size:15px; list-style:none; position:relative; padding-right:28px; }
+  .faq summary::-webkit-details-marker{ display:none; }
+  .faq summary::after{ content:"+"; position:absolute; right:0; top:-2px; font-size:20px; color:var(--ink-dim); }
+  .faq details[open] summary::after{ content:"\2212"; }
+  .faq p{ color:var(--ink-dim); font-size:14.5px; line-height:1.7; margin:10px 0 0; }
+
+  .final{ text-align:center; padding:70px 0 70px; }
+  .final h2{ font-family:'Poppins',sans-serif; font-size:28px; margin:0 0 10px; text-wrap:balance; }
+  .final p{ color:var(--ink-dim); font-size:15.5px; margin:0 auto; max-width:560px; line-height:1.6; }
+
+  footer{ border-top:1px solid rgba(255,255,255,.08); padding:26px 0 40px; }
+  footer .wrap{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; }
+  footer p{ margin:0; font-size:13px; color:var(--ink-faint); }
+  footer .links a{ font-size:13px; color:var(--ink-dim); text-decoration:none; margin-left:18px; }
+  footer .links a:hover{ color:var(--ink); }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="/fr/"><span class="mark">U</span>Uno Mega Menu</a>
+    <nav class="site"><a href="#tiers">Tarifs</a><a href="#brands">Pour les marques</a><a href="#total">Coût complet</a><a href="#how">Fonctionnement</a><a href="#faq">Questions</a><a href="/build-for-you/" lang="en" hreflang="en">English</a></nav>
+  </div>
+</header>
+
+<section class="hero wrap">
+  <p class="kicker">Menu clé en main</p>
+  <h1>Votre mega menu, construit et activé par le créateur de l'app</h1>
+  <p class="lead">Vous envoyez un court brief. Je construis le menu dans votre boutique Shopify, avec vos produits, vos prix et votre marque, puis je le mets en ligne. Un prix fixe, aucune réunion nécessaire.</p>
+  <div class="actions">
+    <a class="btn" href="#tiers">Voir les tarifs</a>
+    <a class="btn ghost" href="mailto:m.vawda.pro@gmail.com?subject=Question%20sur%20le%20menu%20cl%C3%A9%20en%20main">Poser une question</a>
+  </div>
+  <ul class="proof">
+    <li>En ligne en 2 à 7 jours ouvrés</li>
+    <li>Prix fixe à partir de 49&nbsp;$</li>
+    <li>Aucun accès à vos commandes ni à vos clients</li>
+    <li>Remboursement intégral tant que le travail n'a pas commencé</li>
+  </ul>
+
+  <div class="shot" aria-hidden="true">
+    <div class="bar"><span>Nouveautés<b class="pill new">NEW</b></span><span>Promotions<b class="pill sale">SALE</b></span><span class="on">Soins</span><span>Maquillage</span><span>Parfums</span></div>
+    <div class="panel">
+      <div><h4>Par besoin</h4><a>Hydratation</a><a>Anti-âge</a><a>Peaux sensibles</a><a>Tous les soins</a></div>
+      <div><h4>Par type</h4><a>Sérums</a><a>Crèmes hydratantes</a><a>Masques</a><a>Coffrets cadeaux</a></div>
+      <div class="cards">
+        <div><div class="sw" style="background:linear-gradient(135deg,#bfe9df,#8fd4c3)"></div><p>Sérum Rosée</p><span><s>48,00&nbsp;$</s>39,00&nbsp;$</span><em>Ajouter au panier</em></div>
+        <div><div class="sw" style="background:linear-gradient(135deg,#c9c2ea,#a89ddb)"></div><p>Crème de nuit</p><span>24,00&nbsp;$ à 56,00&nbsp;$</span><em>Choisir les options</em></div>
+        <div><div class="sw" style="background:linear-gradient(135deg,#f3d9c6,#e4b795)"></div><p>Masque à l'argile</p><span>19,00&nbsp;$</span><em>Ajouter au panier</em></div>
+      </div>
+    </div>
+    <div class="ship">Plus que 12,00&nbsp;$ pour profiter de la livraison offerte<i></i></div>
+  </div>
+  <p class="caption">Illustration d'un menu de la formule Business&nbsp;: liens par besoin, produits mis en avant avec prix à jour et barre de livraison offerte.</p>
+</section>
+
+<section class="sec wrap">
+  <h2>Pourquoi déléguer</h2>
+  <p class="intro">Votre menu est présent sur chaque page de votre boutique. C'est l'élément que vos clients utilisent le plus. En construire un bon prend un après-midi que vous n'avez sans doute pas.</p>
+  <div class="three">
+    <div><h3>Vous gardez votre temps</h3><p>Vous remplissez un court brief. Je m'occupe de la structure, des liens, des produits, du style et des vérifications sur ordinateur et sur mobile.</p></div>
+    <div><h3>Il est conçu pour vendre</h3><p>Des produits avec prix à jour et bouton d'achat dans le menu, des prix barrés pour vos promotions, une barre de livraison offerte et des badges sur les nouveautés.</p></div>
+    <div><h3>Votre boutique en ligne reste protégée</h3><p>Je travaille sur une copie de votre thème. Rien ne change pour vos clients tant que vous n'avez pas validé l'aperçu.</p></div>
+  </div>
+</section>
+
+<section class="sec wrap" id="tiers">
+  <h2>Trois prix fixes</h2>
+  <p class="intro">Pour la plupart des boutiques, l'une de ces trois formules suffit. Chaque prix est payé une seule fois pour la construction. Il comprend l'activation du menu dans votre thème et le masquage de votre ancien menu&nbsp;: ce que vous recevez est en ligne et terminé.</p>
+  <div class="grid">
+    <div class="card">
+      <h3>Express</h3>
+      <div class="for">Pour un catalogue simple qui a besoin d'un seul menu clair et bien organisé.</div>
+      <div class="price">49&nbsp;$</div>
+      <div class="once">paiement unique</div>
+      <div class="delivery">En ligne en 2 jours ouvrés</div>
+      <div class="plan">Fonctionne avec le plan <strong>Free</strong> de l'app. Rien d'autre à payer.</div>
+      <ul>
+        <li>Jusqu'à 6 éléments dans votre navigation principale</li>
+        <li>1 mega panneau avec colonnes, jusqu'à 40 liens au total</li>
+        <li>Badges NEW, SALE et HOT mis en place</li>
+        <li>Vos couleurs et votre police</li>
+        <li>Menu activé, ancien menu masqué</li>
+        <li>Chaque lien vérifié sur ordinateur et sur mobile</li>
+        <li>1 révision incluse</li>
+      </ul>
+      <a class="cta" href="mailto:m.vawda.pro@gmail.com?subject=Formule%20Express%2049%20%24&amp;body=Adresse%20de%20la%20boutique%20%28se%20termine%20par%20.myshopify.com%29%20%3A%0AFormule%20%3A%20Express%2C%2049%20%24%0ACe%20que%20je%20vends%20%3A%0AUne%20boutique%20dont%20j%27aime%20le%20menu%20%3A%0ADate%20limite%2C%20s%27il%20y%20en%20a%20une%20%3A%0A">Commander Express</a>
+    </div>
+
+    <div class="card popular">
+      <h3>Business<span class="tag">LA PLUS CHOISIE</span></h3>
+      <div class="for">Pour une boutique en croissance qui veut vendre ses produits depuis le menu.</div>
+      <div class="price">149&nbsp;$</div>
+      <div class="once">paiement unique</div>
+      <div class="delivery">En ligne en 4 jours ouvrés</div>
+      <div class="plan">Nécessite le plan <strong>Plus</strong> de l'app&nbsp;: 19,99&nbsp;$ par mois ou 199,90&nbsp;$ par an, après un essai gratuit de 14 jours.</div>
+      <ul>
+        <li>Tout le contenu d'Express</li>
+        <li>Jusqu'à 8 éléments principaux, jusqu'à 4 mega panneaux ou panneaux à onglets, 120 liens au total</li>
+        <li>Jusqu'à 8 produits mis en avant avec prix à jour et bouton d'achat</li>
+        <li>Des colonnes de collection qui suivent votre catalogue toutes seules</li>
+        <li>Barre de livraison offerte réglée sur votre seuil</li>
+        <li>Badges NEW automatiques sur les produits récents</li>
+        <li>2 révisions incluses</li>
+      </ul>
+      <a class="cta" href="mailto:m.vawda.pro@gmail.com?subject=Formule%20Business%20149%20%24&amp;body=Adresse%20de%20la%20boutique%20%28se%20termine%20par%20.myshopify.com%29%20%3A%0AFormule%20%3A%20Business%2C%20149%20%24%0ACe%20que%20je%20vends%20%3A%0AUne%20boutique%20dont%20j%27aime%20le%20menu%20%3A%0ADate%20limite%2C%20s%27il%20y%20en%20a%20une%20%3A%0A">Commander Business</a>
+    </div>
+
+    <div class="card signature">
+      <h3>Signature<span class="tag" style="background:var(--gold);color:#1a1a1a;">COMPLÈTE</span></h3>
+      <div class="for">Pour une marque qui veut le menu de vente complet et sa prochaine campagne déjà prête.</div>
+      <div class="price">299&nbsp;$</div>
+      <div class="once">paiement unique</div>
+      <div class="delivery">En ligne en 7 jours ouvrés</div>
+      <div class="plan">Nécessite le plan <strong>Studio</strong> de l'app&nbsp;: 29,99&nbsp;$ par mois ou 299,90&nbsp;$ par an, après un essai gratuit de 14 jours.</div>
+      <ul>
+        <li>Tout le contenu de Business</li>
+        <li>Jusqu'à 10 éléments principaux avec un panneau sur chacun, 250 liens au total</li>
+        <li>Jusqu'à 16 produits mis en avant</li>
+        <li>Achat en un geste sur les liens produits, activé et testé</li>
+        <li>1 menu saisonnier construit et programmé pour s'activer puis se retirer tout seul</li>
+        <li>Statistiques du menu&nbsp;: clics, ajouts au panier et chiffre d'affaires par élément du menu</li>
+        <li>3 révisions incluses</li>
+      </ul>
+      <a class="cta" href="mailto:m.vawda.pro@gmail.com?subject=Formule%20Signature%20299%20%24&amp;body=Adresse%20de%20la%20boutique%20%28se%20termine%20par%20.myshopify.com%29%20%3A%0AFormule%20%3A%20Signature%2C%20299%20%24%0ACe%20que%20je%20vends%20%3A%0AUne%20boutique%20dont%20j%27aime%20le%20menu%20%3A%0ADate%20limite%2C%20s%27il%20y%20en%20a%20une%20%3A%0A">Commander Signature</a>
+    </div>
+  </div>
+  <div class="quote">
+    <p><strong>Vous dirigez une marque établie&nbsp;?</strong> Plusieurs boutiques, plusieurs pays ou un catalogue devenu trop grand pour sa navigation. Il existe une offre dédiée, avec des résultats mesurés.</p>
+    <a class="btn ghost" href="#brands">Voir les offres pour les marques</a>
+  </div>
+  <p class="note">Prix en dollars américains. Vous pouvez payer par carte dans votre propre devise. Un élément est une entrée de votre barre de navigation principale. Un lien est toute ligne cliquable à l'intérieur d'un panneau.</p>
+</section>
+
+<section class="sec wrap" id="brands">
+  <p class="kicker" style="display:block;text-align:center;color:var(--gold)">Pour les marques établies</p>
+  <h2>Quand le menu est un canal de revenus, pas une liste de liens</h2>
+  <p class="intro">Chaque visiteur voit votre navigation, sur chaque page, avant tout le reste. Pour une marque qui a un vrai trafic, son organisation décide de ce qui est trouvé et de ce qui est acheté. Ces offres la traitent comme telle&nbsp;: une structure pensée pour votre catalogue, construite pour vous, puis ajustée d'après les chiffres.</p>
+  <div class="brands">
+    <div class="pcard">
+      <div class="eyebrow">Lancer</div>
+      <h3>Construction Flagship</h3>
+      <div class="for">Pour une marque qui veut un menu visiblement dessiné pour elle, en ligne en deux semaines, sans rien avoir à faire.</div>
+      <div class="price">799&nbsp;$</div>
+      <div class="once">paiement unique · en ligne en 10 jours ouvrés</div>
+      <ul>
+        <li>Tout le contenu de Signature</li>
+        <li><strong>Deux propositions de structure</strong> au choix avant que je construise</li>
+        <li><strong>Design sur mesure</strong>&nbsp;: un style écrit pour votre marque, au-delà des couleurs et des polices</li>
+        <li>3 bannières de panneau créées à partir de vos photos</li>
+        <li>2 langues supplémentaires traduites à la main</li>
+        <li>3 mois de suivi mensuel inclus</li>
+      </ul>
+      <a class="cta" href="mailto:m.vawda.pro@gmail.com?subject=Construction%20Flagship%20799%20%24&amp;body=Offre%20%3A%20Construction%20Flagship%2C%20799%20%24%0AAdresse%20de%20la%20boutique%20%3A%0ACe%20que%20vous%20vendez%20%3A%0ANombre%20approximatif%20de%20produits%20et%20de%20collections%20%3A%0APays%20et%20langues%20de%20vente%20%3A%0ANombre%20de%20boutiques%20%3A%0ACe%20que%20vous%20attendez%20du%20menu%20%3A%0ADate%20de%20d%C3%A9marrage%20id%C3%A9ale%20%3A%0A">Démarrer une Construction Flagship</a>
+    </div>
+
+    <div class="pcard">
+      <div class="eyebrow">Repenser</div>
+      <h3>Refonte de navigation</h3>
+      <div class="for">Pour un catalogue devenu trop grand pour son menu&nbsp;: trop de collections, des clients qui ne trouvent pas la bonne, des meilleures ventes enfouies.</div>
+      <div class="price">à partir de 1&nbsp;500&nbsp;$</div>
+      <div class="once">paiement unique · 3 à 4 semaines · acompte de 50&nbsp;%</div>
+      <ul>
+        <li><strong>Audit</strong> de votre navigation actuelle, collection par collection</li>
+        <li><strong>Nouvelle structure</strong> bâtie sur la façon dont vos clients cherchent les produits</li>
+        <li>Construction Flagship du nouveau menu, design sur mesure inclus</li>
+        <li>Vos menus saisonniers des 12 prochains mois, programmés à l'avance</li>
+        <li><strong>90 jours d'ajustements</strong> d'après les statistiques du menu, avec un rapport écrit chaque mois</li>
+      </ul>
+      <a class="cta" href="mailto:m.vawda.pro@gmail.com?subject=Refonte%20de%20navigation&amp;body=Offre%20%3A%20Refonte%20de%20navigation%2C%20%C3%A0%20partir%20de%201%20500%20%24%0AAdresse%20de%20la%20boutique%20%3A%0ACe%20que%20vous%20vendez%20%3A%0ANombre%20approximatif%20de%20produits%20et%20de%20collections%20%3A%0APays%20et%20langues%20de%20vente%20%3A%0ANombre%20de%20boutiques%20%3A%0ACe%20que%20vous%20attendez%20du%20menu%20%3A%0ADate%20de%20d%C3%A9marrage%20id%C3%A9ale%20%3A%0A">Demander une proposition</a>
+    </div>
+
+    <div class="pcard">
+      <div class="eyebrow">Déléguer</div>
+      <h3>Partenaire à l'année</h3>
+      <div class="for">Pour une équipe qui ne veut plus jamais penser à son menu, sur une boutique ou sur plusieurs.</div>
+      <div class="price">à partir de 2&nbsp;900&nbsp;$ par an</div>
+      <div class="once">ou à partir de 290&nbsp;$ par mois · la facturation à l'année offre deux mois</div>
+      <ul>
+        <li>Refonte de navigation pour démarrer l'année</li>
+        <li><strong>Chaque campagne préparée</strong>&nbsp;: promotions, lancements et fêtes, construits et programmés pour vous</li>
+        <li>Jusqu'à 4 lots de modifications du menu par mois, chacun en ligne sous 2 jours ouvrés</li>
+        <li><strong>Bilan trimestriel</strong>&nbsp;: les éléments du menu qui rapportent et ceux à remplacer</li>
+        <li>Plusieurs boutiques, pays et langues chiffrés dans votre proposition, à partir de 3&nbsp;000&nbsp;$ par an</li>
+      </ul>
+      <a class="cta" href="mailto:m.vawda.pro@gmail.com?subject=Partenaire%20%C3%A0%20l%27ann%C3%A9e&amp;body=Offre%20%3A%20Partenaire%20%C3%A0%20l%27ann%C3%A9e%2C%20%C3%A0%20partir%20de%202%20900%20%24%20par%20an%0AAdresse%20de%20la%20boutique%20%3A%0ACe%20que%20vous%20vendez%20%3A%0ANombre%20approximatif%20de%20produits%20et%20de%20collections%20%3A%0APays%20et%20langues%20de%20vente%20%3A%0ANombre%20de%20boutiques%20%3A%0ACe%20que%20vous%20attendez%20du%20menu%20%3A%0ADate%20de%20d%C3%A9marrage%20id%C3%A9ale%20%3A%0A">Demander une proposition</a>
+    </div>
+  </div>
+
+  <div class="measure">
+    <div>
+      <h3>Vous voyez ce que le menu rapporte</h3>
+      <p>Uno Mega Menu compte les clics, les ajouts au panier et les ventes pour chaque élément de votre menu. Quand une commande contient un article ajouté depuis le menu, la vente et son montant sont attribués à l'élément qui l'a vendu. Les ajustements ne se font donc pas au hasard. Je garde ce qui rapporte, je remplace ce qui ne rapporte pas et vous recevez les chiffres par écrit.</p>
+    </div>
+    <div class="report" aria-hidden="true">
+      <div class="lbl">Exemple de rapport mensuel</div>
+      <div class="row"><span>Meilleures ventes</span><i style="width:46%"></i><b>42&nbsp;%</b></div>
+      <div class="row"><span>Nouveautés</span><i style="width:30%"></i><b>27&nbsp;%</b></div>
+      <div class="row"><span>Coffrets cadeaux</span><i style="width:20%"></i><b>18&nbsp;%</b></div>
+      <div class="row"><span>Promotions</span><i style="width:14%"></i><b>13&nbsp;%</b></div>
+      <small>Part du chiffre d'affaires du menu par élément. Chiffres illustratifs, il ne s'agit pas d'un résultat client.</small>
+    </div>
+  </div>
+
+  <div class="two">
+    <div class="box">
+      <h3>Comment démarre un projet de marque</h3>
+      <p><strong>1. Vous m'écrivez</strong> en indiquant votre boutique et ce que vous attendez du menu. Le bouton prépare le message.</p>
+      <p><strong>2. Vous recevez une proposition écrite</strong> sous 2 jours ouvrés&nbsp;: périmètre, calendrier, prix fixe. Un appel est possible si vous préférez.</p>
+      <p><strong>3. Le travail démarre à réception d'un acompte de 50&nbsp;%.</strong> Le solde est dû à la mise en ligne du menu.</p>
+    </div>
+    <div class="box">
+      <h3>Un besoin vraiment spécifique&nbsp;?</h3>
+      <p>Un développement sur mesure autour du menu, une migration depuis une autre app de menu ou une intervention sur un thème fortement modifié sont facturés <strong>450&nbsp;$ par jour</strong>, avec un devis écrit gratuit avant tout démarrage.</p>
+      <p><a href="mailto:m.vawda.pro@gmail.com?subject=Devis%20pour%20un%20travail%20sur%20mesure&amp;body=Offre%20%3A%20Travail%20sur%20mesure%2C%20450%20%24%20par%20jour%0AAdresse%20de%20la%20boutique%20%3A%0ACe%20que%20vous%20vendez%20%3A%0ANombre%20approximatif%20de%20produits%20et%20de%20collections%20%3A%0APays%20et%20langues%20de%20vente%20%3A%0ANombre%20de%20boutiques%20%3A%0ACe%20que%20vous%20attendez%20du%20menu%20%3A%0ADate%20de%20d%C3%A9marrage%20id%C3%A9ale%20%3A%0A">Demander un devis</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="sec wrap" id="total">
+  <h2>Ce que cela coûte au total, au mois ou à l'année</h2>
+  <p class="intro">Il y a deux choses distinctes. La <strong>construction</strong> se règle une seule fois, directement auprès de moi. L'<strong>abonnement à l'app</strong> est facturé par Shopify sur votre facture Shopify habituelle. Vous choisissez la facturation au mois ou à l'année. Voici le tableau complet pour votre première année.</p>
+  <div class="tablewrap">
+    <table>
+      <tr><th>Formule</th><th>Construction, payée une fois</th><th>Plan de l'app, facturé au mois</th><th>Plan de l'app, facturé à l'année</th><th>Total de la première année</th></tr>
+      <tr>
+        <td>Express</td>
+        <td><b>49&nbsp;$</b></td>
+        <td><b>0&nbsp;$</b><small>Plan Free, sans limite de durée</small></td>
+        <td><b>0&nbsp;$</b></td>
+        <td><b>49&nbsp;$</b></td>
+      </tr>
+      <tr>
+        <td>Business</td>
+        <td><b>149&nbsp;$</b></td>
+        <td><b>19,99&nbsp;$ par mois</b><small>239,88&nbsp;$ sur 12 mois</small></td>
+        <td><b>199,90&nbsp;$ par an</b><small>soit 16,66&nbsp;$ par mois, 39,98&nbsp;$ d'économie</small></td>
+        <td><b>388,88&nbsp;$</b> en facturation au mois<small><b>348,90&nbsp;$</b> en facturation à l'année</small></td>
+      </tr>
+      <tr>
+        <td>Signature</td>
+        <td><b>299&nbsp;$</b></td>
+        <td><b>29,99&nbsp;$ par mois</b><small>359,88&nbsp;$ sur 12 mois</small></td>
+        <td><b>299,90&nbsp;$ par an</b><small>soit 24,99&nbsp;$ par mois, 59,98&nbsp;$ d'économie</small></td>
+        <td><b>658,88&nbsp;$</b> en facturation au mois<small><b>598,90&nbsp;$</b> en facturation à l'année</small></td>
+      </tr>
+    </table>
+  </div>
+  <div class="two">
+    <div class="box">
+      <h3>Au mois ou à l'année&nbsp;: que choisir&nbsp;?</h3>
+      <p><strong>Au mois</strong>, vous payez un peu plus et vous pouvez arrêter à tout moment. À choisir si vous êtes encore en phase de test.</p>
+      <p><strong>À l'année</strong>, vous payez une seule fois pour 12 mois et vous profitez de deux mois offerts. À choisir dès que vous savez que le menu reste en place.</p>
+      <p>Dans les deux cas, les 14 premiers jours sont gratuits&nbsp;: votre menu terminé est en ligne avant votre premier prélèvement.</p>
+    </div>
+    <div class="box">
+      <h3>À partir de la deuxième année</h3>
+      <p>La construction est derrière vous. Il ne vous reste que le plan de l'app&nbsp;: <strong>0&nbsp;$</strong> pour Express, <strong>199,90&nbsp;$ par an</strong> pour Business, <strong>299,90&nbsp;$ par an</strong> pour Signature en facturation à l'année.</p>
+      <p>Si vous passez plus tard à un plan inférieur, le menu reste en place et les fonctionnalités du plan supérieur se désactivent.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec wrap">
+  <h2>Options</h2>
+  <p class="intro">Ajoutez ce dont vous avez besoin. Le prix de chaque option est annoncé d'avance&nbsp;: le total ne vous réserve aucune surprise.</p>
+  <div class="tablewrap">
+    <table>
+      <tr><th>Option</th><th>Ce que vous obtenez</th><th>Prix</th></tr>
+      <tr><td>Liens supplémentaires</td><td>20 liens de plus sur n'importe quelle formule</td><td><b>19&nbsp;$</b></td></tr>
+      <tr><td>Langue supplémentaire</td><td>Tout le menu traduit à la main dans une langue de plus pour vos clients à l'international</td><td><b>29&nbsp;$</b> par langue</td></tr>
+      <tr><td>Design sur mesure</td><td>Un style écrit pour votre marque sur n'importe quelle formule&nbsp;: espacements, effets au survol, animations, vos propres polices<small>Nécessite le plan Plus de l'app ou un plan supérieur</small></td><td><b>149&nbsp;$</b></td></tr>
+      <tr><td>Bannière créée pour vous</td><td>Une bannière de panneau conçue à partir de vos photos, dans le style de votre marque</td><td><b>39&nbsp;$</b> par bannière</td></tr>
+      <tr><td>Propositions de structure</td><td>Deux façons d'organiser votre navigation, au choix avant que je construise</td><td><b>99&nbsp;$</b></td></tr>
+      <tr><td>Deuxième boutique</td><td>Le même menu installé et vérifié sur une autre boutique</td><td><b>50&nbsp;%</b> de la formule</td></tr>
+      <tr><td>Livraison express</td><td>Formule Express en ligne en 1 jour ouvré au lieu de 2</td><td><b>49&nbsp;$</b></td></tr>
+      <tr><td>Révision supplémentaire</td><td>Un lot de modifications de plus après les révisions incluses</td><td><b>29&nbsp;$</b></td></tr>
+      <tr><td>Suivi mensuel</td><td>Un lot de modifications du menu chaque mois&nbsp;: nouvelles collections, nouveaux produits mis en avant, votre prochain menu saisonnier<small>Arrêtez quand vous voulez en facturation au mois</small></td><td><b>39&nbsp;$ par mois</b><small>ou 390&nbsp;$ par an, deux mois offerts</small></td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="sec wrap" id="how">
+  <h2>Comment ça se passe</h2>
+  <p class="intro">Cinq étapes. Votre part prend environ quinze minutes.</p>
+  <ol class="steps">
+    <li><strong>Vous choisissez une formule et vous m'écrivez.</strong> Le bouton ouvre un message avec les quelques informations dont j'ai besoin. Je réponds sous un jour ouvré avec un court brief et un lien de paiement sécurisé.</li>
+    <li><strong>Vous payez et vous approuvez mon accès.</strong> Shopify vous transmet ma demande d'accès, limitée aux apps et aux thèmes. Vous l'approuvez en un clic et vous pouvez la retirer à tout moment.</li>
+    <li><strong>Je construis sur une copie de votre thème.</strong> Votre boutique en ligne ne change pas pendant que je travaille.</li>
+    <li><strong>Vous vérifiez l'aperçu.</strong> Je vous envoie un lien privé. Vous m'envoyez toutes vos modifications en un seul message.</li>
+    <li><strong>Je mets en ligne.</strong> J'active le menu dans votre thème publié, je masque votre ancien menu et je vérifie chaque lien sur ordinateur et sur mobile.</li>
+  </ol>
+</section>
+
+<section class="sec wrap" id="faq">
+  <h2>Questions</h2>
+  <p class="intro">Les réponses que les marchands demandent avant de commander.</p>
+  <div class="faq">
+    <details><summary>Qui construit mon menu&nbsp;?</summary><p>Moi. Je suis Mohamed, le développeur d'Uno Mega Menu. Je suis basé à l'île Maurice (GMT+4) et je réponds sous un jour ouvré.</p></details>
+    <details><summary>Quand le délai de livraison commence-t-il&nbsp;?</summary><p>Dès que j'ai trois choses&nbsp;: votre paiement, votre accès approuvé et votre brief complété. Les jours ouvrés vont du lundi au vendredi.</p></details>
+    <details><summary>De quoi avez-vous besoin de ma part&nbsp;?</summary><p>Les éléments que vous voulez dans votre navigation, les collections et les produits à mettre en avant, les couleurs de votre marque et les éventuelles images de bannière. Les images sont fournies par vous, au format que je vous indique dans le brief. Si vous hésitez sur la structure, dites-moi ce que vous vendez et je vous en proposerai une.</p></details>
+    <details><summary>Dois-je d'abord installer l'app&nbsp;?</summary><p>Oui. Installez Uno Mega Menu depuis le Shopify App Store&nbsp;: cela prend une minute et le plan Free ne coûte rien. Pour Business et Signature, démarrez l'essai gratuit du plan indiqué sur la formule.</p></details>
+    <details><summary>Combien de produits le menu peut-il afficher&nbsp;?</summary><p>Shopify permet à un menu d'afficher sur une page jusqu'à 20 produits choisis à la main, avec prix à jour et bouton d'achat. Pour les sélections plus larges, j'utilise des colonnes de collection, qui n'ont pas cette limite et affichent toujours les produits actuels de la collection.</p></details>
+    <details><summary>Est-ce compatible avec mon thème&nbsp;?</summary><p>Oui, avec tous les thèmes Online Store 2.0, ce qui couvre Dawn, Horizon et presque tous les thèmes vendus aujourd'hui. Les thèmes sur mesure et les thèmes plus anciens sont traités sur devis.</p></details>
+    <details><summary>Qu'est-ce qu'une révision&nbsp;?</summary><p>Un lot de modifications envoyé en un seul message, dans les 14 jours suivant la livraison. Les modifications qui dépassent la formule commandée font l'objet d'un devis avant que je commence.</p></details>
+    <details><summary>Puis-je être remboursé&nbsp;?</summary><p>Oui, intégralement, tant que je n'ai pas commencé la construction. Une fois le travail commencé, les révisions incluses servent à obtenir le menu qu'il vous faut.</p></details>
+    <details><summary>Que pouvez-vous voir dans ma boutique&nbsp;?</summary><p>Uniquement les apps et les thèmes. Je ne vois ni vos commandes, ni vos clients, ni vos finances. Je ne modifie pas non plus les fichiers de votre thème&nbsp;: le menu est un bloc d'app qui disparaît si vous désinstallez l'app.</p></details>
+    <details><summary>Puis-je modifier le menu moi-même ensuite&nbsp;?</summary><p>Oui. Tout est construit dans l'éditeur visuel de l'app&nbsp;: vous pouvez changer vous-même un lien, un produit ou une couleur à tout moment. Le suivi mensuel est là si vous préférez ne pas vous en charger.</p></details>
+  </div>
+</section>
+
+<section class="final wrap">
+  <h2>Envie de passer la main&nbsp;?</h2>
+  <p>Choisissez votre formule et envoyez le message. Vous recevez une réponse, un brief et un lien de paiement sous un jour ouvré.</p>
+  <div class="actions">
+    <a class="btn" href="#tiers">Choisir une formule</a>
+    <a class="btn ghost" href="mailto:m.vawda.pro@gmail.com?subject=Question%20sur%20le%20menu%20cl%C3%A9%20en%20main">Poser d'abord une question</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 Uno Mega Menu</p>
+    <div class="links">
+      <a href="mailto:m.vawda.pro@gmail.com">m.vawda.pro@gmail.com</a>
+      <a href="/fr/">Accueil</a>
+      <a href="/fr/tutorial/">Premiers pas</a>
+      <a href="/fr/privacy/">Politique de confidentialité</a>
+      <a href="/fr/terms/">Conditions d'utilisation</a>
+      <a href="/build-for-you/" lang="en" hreflang="en">English</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
